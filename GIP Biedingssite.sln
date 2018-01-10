@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIP Biedingssite", "GIP Biedingssite\GIP Biedingssite.csproj", "{98A87B63-A5C8-4E2D-8102-25E26E127276}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FOTO's", "FOTO's", "{AE94440B-7C10-4E7E-BF32-377F39D84999}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\GIP Biedingssite\LOGO GIP BIEDING$ITE.png = ..\..\..\Desktop\GIP Biedingssite\LOGO GIP BIEDING$ITE.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5FF44B7-D6B0-4717-89D9-B523F00A6135}
 	EndGlobalSection
 EndGlobal

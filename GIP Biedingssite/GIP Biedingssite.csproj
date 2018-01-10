@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\biedingsite.accdb" />
+    <Content Include="foto%27s\LOGO GIP BIEDING%24ITE.png" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
     <Content Include="Login.aspx" />
