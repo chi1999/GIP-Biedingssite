@@ -3,10 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
-        &nbsp;&nbsp;<asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="dtsBodArt" Height="50px" Width="125px">
-        </asp:DetailsView>
-        <asp:SqlDataSource ID="dtsBodArt" runat="server"></asp:SqlDataSource>
-        <br />
+        &nbsp;&nbsp;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
     </form>
 </body>
