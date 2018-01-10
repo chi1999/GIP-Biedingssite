@@ -12,16 +12,14 @@
     <form id="form1" runat="server">
         <div>
             <asp:Image ID="Image1" runat="server" Height="156px" ImageUrl="~/foto's/LOGO GIP BIEDING$ITE.png" Width="188px" />
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
         </div>
         <p>
             Navigatie</p>
         <p>
-            &nbsp;</p>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </p>
     </form>
-    <p>
-        fff</p>
     <p>
         &nbsp;</p>
     <p>
