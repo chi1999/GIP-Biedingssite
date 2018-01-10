@@ -11,7 +11,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Image ID="Image1" runat="server" Height="156px" ImageUrl="~/foto's/LOGO GIP BIEDING$ITE.png" Width="188px" />
         </div>
         <p>
             Navigatie</p>
