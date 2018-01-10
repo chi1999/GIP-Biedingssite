@@ -69,7 +69,7 @@
     <Content Include="App_Data\biedingsite.accdb" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
-    <Content Include="Profiel1.aspx" />
+    <Content Include="Login.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -97,12 +97,12 @@
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profiel1.aspx.cs">
-      <DependentUpon>Profiel1.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profiel1.aspx.designer.cs">
-      <DependentUpon>Profiel1.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
