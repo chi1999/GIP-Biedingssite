@@ -72,6 +72,7 @@
     <Content Include="MasterPage.Master" />
     <Content Include="Login.aspx" />
     <Content Include="Artikelen.aspx" />
+    <Content Include="BodPlaatsen.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -112,6 +113,13 @@
     </Compile>
     <Compile Include="Artikelen.aspx.designer.cs">
       <DependentUpon>Artikelen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BodPlaatsen.aspx.cs">
+      <DependentUpon>BodPlaatsen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BodPlaatsen.aspx.designer.cs">
+      <DependentUpon>BodPlaatsen.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

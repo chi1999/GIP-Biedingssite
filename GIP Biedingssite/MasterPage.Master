@@ -17,8 +17,9 @@
             Navigatie</p>
         <p>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
         </p>
+                <p>
+                </p>
     </form>
     <p>
         &nbsp;</p>
@@ -38,3 +39,5 @@
         &nbsp;</p>
 </body>
 </html>
+            </asp:ContentPlaceHolder>
+        
