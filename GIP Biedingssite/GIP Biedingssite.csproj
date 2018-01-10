@@ -71,6 +71,7 @@
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
     <Content Include="Login.aspx" />
+    <Content Include="Artikelen.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Artikelen.aspx.cs">
+      <DependentUpon>Artikelen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Artikelen.aspx.designer.cs">
+      <DependentUpon>Artikelen.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
