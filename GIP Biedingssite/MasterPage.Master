@@ -17,27 +17,13 @@
             Navigatie</p>
         <p>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </p>
-                <p>
-                </p>
-    </form>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        &nbsp;</p>
-    <p>
-        email</p>
-    <p>
-        &nbsp;</p>
-</body>
-</html>
             </asp:ContentPlaceHolder>
+        </p>
+        
+    </form>
+            
+</body>
+    
+</html>
+
         
