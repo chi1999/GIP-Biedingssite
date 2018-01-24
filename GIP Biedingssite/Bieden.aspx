@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Bieden.aspx.cs" Inherits="GIP_Biedingssite.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="WebForm4.aspx.cs" Inherits="GIP_Biedingssite.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -20,7 +20,7 @@
     </asp:SqlDataSource>
     <asp:Panel ID="pnlGebruikers" runat="server">
         <asp:Label ID="lblgebruikers" runat="server" Text="Geboden gebruikers:"></asp:Label>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="dtsGebruikers">
+        <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="dtsGebruikers">
             <Columns>
                 <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" SortExpression="ArtikelID" />
                 <asp:BoundField DataField="Bod" HeaderText="Bod" SortExpression="Bod" />
@@ -36,8 +36,7 @@
         </asp:SqlDataSource>
     </asp:Panel>
     <p>
+        &nbsp;</p>
     <asp:TextBox ID="txtBod" runat="server"></asp:TextBox>
-    </p>
-    <br />
-&nbsp;&nbsp;&nbsp; 
+    <asp:Button ID="btnBieden" runat="server" Height="26px" OnClick="Bieden" Text="Bod plaatsen" />
 </asp:Content>

@@ -10,7 +10,7 @@
 namespace GIP_Biedingssite {
     
     
-    public partial class WebForm2 {
+    public partial class WebForm4 {
         
         /// <summary>
         /// lblArtikel control.
@@ -58,13 +58,13 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.Label lblgebruikers;
         
         /// <summary>
-        /// GridView1 control.
+        /// GridView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridView2;
         
         /// <summary>
         /// dtsGebruikers control.
@@ -83,5 +83,14 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBod;
+        
+        /// <summary>
+        /// btnBieden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBieden;
     }
 }
