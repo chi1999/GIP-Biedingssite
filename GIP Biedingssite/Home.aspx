@@ -28,7 +28,7 @@
             <br />
             <asp:Label ID="UserNameLabel6" runat="server" AssociatedControlID="UserName">Email:</asp:Label>
             <asp:TextBox ID="txtemail" runat="server"></asp:TextBox>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtemail" ErrorMessage="RegularExpressionValidator" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Email adres in niet herkent als email adres</asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtemail" ErrorMessage="RegularExpressionValidator" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Het veld is niet herkent als email adres</asp:RegularExpressionValidator>
             <br />
             <br />
             <asp:Button ID="btnRegistr" runat="server" Text="Registeren" />

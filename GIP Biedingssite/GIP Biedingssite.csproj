@@ -73,6 +73,7 @@
     <Content Include="MasterPage.Master" />
     <Content Include="Home.aspx" />
     <Content Include="Artikelen.aspx" />
+    <Content Include="Bieden.aspx" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -115,6 +116,13 @@
     </Compile>
     <Compile Include="Artikelen.aspx.designer.cs">
       <DependentUpon>Artikelen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bieden.aspx.cs">
+      <DependentUpon>Bieden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bieden.aspx.designer.cs">
+      <DependentUpon>Bieden.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
