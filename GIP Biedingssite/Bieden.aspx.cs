@@ -18,29 +18,40 @@ namespace GIP_Biedingssite
         public static OleDbConnection cnn = new OleDbConnection(strconnectie);
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["gebruiker"] = 2;
+            Session["ArtikelID"] = 1;
         }
         protected void Bieden(object sender, EventArgs e)
         {
+
             string hostName = Dns.GetHostName(); // Retrive the Name of HOST  
             // Get the IP  
             string myIP = Dns.GetHostEntry(hostName).AddressList[0].ToString();
-            txtBod.Text = myIP;
+            //txtBod.Text = myIP;
             OleDbCommand cmd = new OleDbCommand();
 
             cmd.Connection = cnn;
 
             string strsql;
-            strsql = "INSERT INTO tblBod(Bod, Moment, IPadres, GebruikerID, ArtikelID) ";
+            strsql = "INSERT INTO Bod(Bod, Moment, IPadres, GebruikerID, ArtikelID) ";
             strsql += "VALUES(@bod, @moment, @ip, @gebruiker, @Artikel)";
+            cmd.Parameters.AddWithValue("@bod", Convert.ToInt32(txtBod.Text));
+            cmd.Parameters.AddWithValue("@moment", DateTime.Now);
+            cmd.Parameters.AddWithValue("@ip", myIP);
+            cmd.Parameters.AddWithValue("@gebruiker", Session["Gebruiker"]);
+            cmd.Parameters.AddWithValue("@Artikel", Session["ArtikelID"]);
 
             cmd.CommandText = strsql;
 
             cnn.Open();
-
+            cmd.ExecuteNonQuery();
 
             cnn.Close();
         }
-       
+
+        protected void dtsArtikel_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }

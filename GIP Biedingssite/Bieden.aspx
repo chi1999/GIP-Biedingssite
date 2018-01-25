@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="WebForm4.aspx.cs" Inherits="GIP_Biedingssite.WebForm4" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Bieden.aspx.cs" Inherits="GIP_Biedingssite.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,7 +13,7 @@
             <asp:BoundField DataField="Einddatum" HeaderText="Einddatum" SortExpression="Einddatum" />
         </Fields>
     </asp:DetailsView>
-    <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Naam, StartPrijs, Beschrijving, ArtikelID, Startdatum, Einddatum FROM Artikel WHERE (ArtikelID = ?)">
+    <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Naam, StartPrijs, Beschrijving, ArtikelID, Startdatum, Einddatum FROM Artikel WHERE (ArtikelID = ?)" OnSelecting="dtsArtikel_Selecting">
         <SelectParameters>
             <asp:SessionParameter DefaultValue="1" Name="?" SessionField="ArtikelID" />
         </SelectParameters>
@@ -35,8 +35,6 @@
             </SelectParameters>
         </asp:SqlDataSource>
     </asp:Panel>
-    <p>
-        &nbsp;</p>
     <asp:TextBox ID="txtBod" runat="server"></asp:TextBox>
     <asp:Button ID="btnBieden" runat="server" Height="26px" OnClick="Bieden" Text="Bod plaatsen" />
 </asp:Content>
