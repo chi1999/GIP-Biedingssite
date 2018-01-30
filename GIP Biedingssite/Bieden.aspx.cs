@@ -31,18 +31,18 @@ namespace GIP_Biedingssite
 
             OleDbCommand cmd = new OleDbCommand();
 
-            
+            int intbod = Convert.ToInt16(txtBod.Text);
 
             cmd.Connection = cnn;
 
             string strsql;
             strsql = "INSERT INTO Bod(Bod, Moment, IPadres, GebruikerID, ArtikelID) ";
             strsql += "VALUES(@bod, @moment, @ip, @gebruiker, @Artikel)";
-            cmd.Parameters.AddWithValue("@bod", Convert.ToDecimal(txtBod.Text));
-            cmd.Parameters.AddWithValue("@moment", DateTime.Now);
+            cmd.Parameters.AddWithValue("@bod", intbod);
+            cmd.Parameters.AddWithValue("@moment", DateTime.Today);
             cmd.Parameters.AddWithValue("@ip", myIP);
-            cmd.Parameters.AddWithValue("@gebruiker", Session["gebruiker"]);
-            cmd.Parameters.AddWithValue("@Artikel", Session["ArtikelID"]);
+            cmd.Parameters.AddWithValue("@gebruiker", 2);
+            cmd.Parameters.AddWithValue("@Artikel", 2);
         
             cmd.CommandText = strsql;
 
