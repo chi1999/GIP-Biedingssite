@@ -22,13 +22,13 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.Label lblArtikel;
         
         /// <summary>
-        /// dtvArtikel control.
+        /// ddvArtikel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView dtvArtikel;
+        protected global::System.Web.UI.WebControls.DetailsView ddvArtikel;
         
         /// <summary>
         /// dtsArtikel control.

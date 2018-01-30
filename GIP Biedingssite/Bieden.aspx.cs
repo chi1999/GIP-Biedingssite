@@ -19,7 +19,7 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["gebruiker"] = 2;
-            Session["ArtikelID"] = 1;
+            Session["ArtikelID"] = ddvArtikel.SelectedValue;
         }
         protected void Bieden(object sender, EventArgs e)
         {
@@ -28,22 +28,26 @@ namespace GIP_Biedingssite
             // Get the IP  
             string myIP = Dns.GetHostEntry(hostName).AddressList[0].ToString();
             //txtBod.Text = myIP;
+
             OleDbCommand cmd = new OleDbCommand();
+
+            
 
             cmd.Connection = cnn;
 
             string strsql;
             strsql = "INSERT INTO Bod(Bod, Moment, IPadres, GebruikerID, ArtikelID) ";
             strsql += "VALUES(@bod, @moment, @ip, @gebruiker, @Artikel)";
-            cmd.Parameters.AddWithValue("@bod", Convert.ToInt32(txtBod.Text));
+            cmd.Parameters.AddWithValue("@bod", Convert.ToDecimal(txtBod.Text));
             cmd.Parameters.AddWithValue("@moment", DateTime.Now);
             cmd.Parameters.AddWithValue("@ip", myIP);
-            cmd.Parameters.AddWithValue("@gebruiker", Session["Gebruiker"]);
+            cmd.Parameters.AddWithValue("@gebruiker", Session["gebruiker"]);
             cmd.Parameters.AddWithValue("@Artikel", Session["ArtikelID"]);
-
+        
             cmd.CommandText = strsql;
 
             cnn.Open();
+
             cmd.ExecuteNonQuery();
 
             cnn.Close();
