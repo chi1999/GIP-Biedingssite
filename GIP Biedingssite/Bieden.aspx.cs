@@ -39,6 +39,10 @@ namespace GIP_Biedingssite
             string myIP = addr[addr.Length - 2].ToString();
             btnBieden.Text = myIP;
 
+
+
+
+
             OleDbCommand cmd = new OleDbCommand();
 
             int intbod = Convert.ToInt16(txtBod.Text);

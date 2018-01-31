@@ -16,6 +16,7 @@
     <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Naam, StartPrijs, Beschrijving, ArtikelID, Startdatum, Einddatum FROM Artikel" OnSelecting="dtsArtikel_Selecting">
     </asp:SqlDataSource>
     <asp:Panel ID="pnlGebruikers" runat="server">
+        <br />
         <asp:Label ID="lblgebruikers" runat="server" Text="Reeds geboden:"></asp:Label>
         <asp:GridView ID="gdvGebruiker" runat="server" AutoGenerateColumns="False" DataSourceID="dtsGebruikers">
             <Columns>
