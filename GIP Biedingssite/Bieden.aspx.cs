@@ -33,19 +33,26 @@ namespace GIP_Biedingssite
         }
         protected void Bieden(object sender, EventArgs e)
         {
+            int intbod = Convert.ToInt16(txtBod.Text);
+
             string strHostName = System.Net.Dns.GetHostName();
             IPHostEntry ipEntry = System.Net.Dns.GetHostEntry(strHostName);
             IPAddress[] addr = ipEntry.AddressList;
             string myIP = addr[addr.Length - 2].ToString();
             btnBieden.Text = myIP;
 
-
+            switch (intbod)
+            {
+                case 0:
+                    
+                    break;
+            }
 
 
 
             OleDbCommand cmd = new OleDbCommand();
 
-            int intbod = Convert.ToInt16(txtBod.Text);
+            
 
             cmd.Connection = cnn;
 
