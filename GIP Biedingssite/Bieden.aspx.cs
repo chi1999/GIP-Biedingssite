@@ -19,15 +19,25 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["gebruiker"] = 2;
-            Session["ArtikelID"] = ddvArtikel.SelectedValue;
+            Session["ArtikelID"] = 1;
+
+            //dtsArtikel.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
+            //ddvArtikel.DataBind();
+
+            //dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
+            //gdvGebruiker.DataBind();
+
+            
+
+
         }
         protected void Bieden(object sender, EventArgs e)
         {
-
-            string hostName = Dns.GetHostName(); // Retrive the Name of HOST  
-            // Get the IP  
-            string myIP = Dns.GetHostEntry(hostName).AddressList[0].ToString();
-            //txtBod.Text = myIP;
+            string strHostName = System.Net.Dns.GetHostName();
+            IPHostEntry ipEntry = System.Net.Dns.GetHostEntry(strHostName);
+            IPAddress[] addr = ipEntry.AddressList;
+            string myIP = addr[addr.Length - 2].ToString();
+            btnBieden.Text = myIP;
 
             OleDbCommand cmd = new OleDbCommand();
 
@@ -41,8 +51,8 @@ namespace GIP_Biedingssite
             cmd.Parameters.AddWithValue("@bod", intbod);
             cmd.Parameters.AddWithValue("@moment", DateTime.Today);
             cmd.Parameters.AddWithValue("@ip", myIP);
-            cmd.Parameters.AddWithValue("@gebruiker", 2);
-            cmd.Parameters.AddWithValue("@Artikel", 2);
+            cmd.Parameters.AddWithValue("@gebruiker", Session["gebruiker"]);
+            cmd.Parameters.AddWithValue("@Artikel", Session["ArtikelID"]);
         
             cmd.CommandText = strsql;
 

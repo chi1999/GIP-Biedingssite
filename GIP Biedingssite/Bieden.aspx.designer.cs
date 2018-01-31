@@ -58,13 +58,13 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.Label lblgebruikers;
         
         /// <summary>
-        /// GridView2 control.
+        /// gdvGebruiker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView gdvGebruiker;
         
         /// <summary>
         /// dtsGebruikers control.
@@ -74,6 +74,42 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dtsGebruikers;
+        
+        /// <summary>
+        /// pnlBeheerder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlBeheerder;
+        
+        /// <summary>
+        /// lblbeheerder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblbeheerder;
+        
+        /// <summary>
+        /// gdvbeheerder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvbeheerder;
+        
+        /// <summary>
+        /// dtsbeheerder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dtsbeheerder;
         
         /// <summary>
         /// txtBod control.
