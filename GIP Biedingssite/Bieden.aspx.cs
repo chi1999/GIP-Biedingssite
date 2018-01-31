@@ -41,12 +41,7 @@ namespace GIP_Biedingssite
             string myIP = addr[addr.Length - 2].ToString();
             btnBieden.Text = myIP;
 
-            switch (intbod)
-            {
-                case 0:
-                    
-                    break;
-            }
+            int intgeboden = Convert.ToInt32(ddvArtikel.Rows);
 
 
 
