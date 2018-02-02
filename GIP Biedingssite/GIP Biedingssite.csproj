@@ -68,7 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\biedingsite.accdb" />
-    <Content Include="foto%27s\LOGO GIP BIEDING%24ITE.png" />
+    <Content Include="fotos\geodriehoek.jpg" />
+    <Content Include="fotos\LOGO GIP BIEDING%24ITE.png" />
+    <Content Include="fotos\Pennenzak.jpeg" />
+    <Content Include="fotos\Rekenmachine.jfif" />
+    <Content Include="fotos\turnkledij.jpg" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
     <Content Include="Home.aspx" />

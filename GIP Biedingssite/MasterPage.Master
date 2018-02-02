@@ -14,8 +14,6 @@
             <asp:Image ID="Image1" runat="server" Height="157px" ImageUrl="~/foto's/LOGO GIP BIEDING$ITE.png" Width="158px" />
         </div>
         <p>
-            Navigatie</p>
-        <p>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </p>
