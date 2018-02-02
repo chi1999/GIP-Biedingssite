@@ -27,8 +27,10 @@ namespace GIP_Biedingssite
             //dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
             //gdvGebruiker.DataBind();
 
-            
+            OleDbCommand cmdStartprijs = new OleDbCommand();
+            cmdStartprijs.Connection = cnn;
 
+            cmdStartprijs.CommandText = "StartPrijs FROM Artikel ";
 
         }
         protected void Bieden(object sender, EventArgs e)
@@ -46,9 +48,6 @@ namespace GIP_Biedingssite
 
 
             OleDbCommand cmd = new OleDbCommand();
-
-            
-
             cmd.Connection = cnn;
 
             string strsql;
