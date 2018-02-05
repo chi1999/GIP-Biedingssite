@@ -44,6 +44,7 @@
             <asp:TextBox ID="Password" runat="server" TextMode="Password" Width="128px"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" Width="53px" />
+            <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" Width="53px" OnClick="LoginButton_Click" />
+            <asp:Label ID="lblNietJuist" runat="server"></asp:Label>
         </asp:Panel>
 </asp:Content>
