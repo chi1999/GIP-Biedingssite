@@ -38,18 +38,19 @@ namespace GIP_Biedingssite
         {
             
 
-            OleDbCommand  cmdRegistreren = new OleDbCommand();
+            //OleDbCommand  cmdRegistreren = new OleDbCommand();
 
-            cmdRegistreren.Connection = cnn;
+            //cmdRegistreren.Connection = cnn;
 
-            cmdRegistreren.CommandText = cnn;
+            //cmdRegistreren.CommandText = cnn;
 
-            string strSQL;
-            strSQL = "gip";
+            //string strSQL;
+            //strSQL = "gip";
 
-            cmd.CommandText = strSQL;
-            cnn.Open();
-            cnn.Close();
+            //cmd.CommandText = strSQL;
+            //cnn.Open();
+            //cnn.Close();
+
         }
     }
 }
