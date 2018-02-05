@@ -31,7 +31,7 @@
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtemail" ErrorMessage="RegularExpressionValidator" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">Het veld is niet herkent als email adres</asp:RegularExpressionValidator>
             <br />
             <br />
-            <asp:Button ID="btnRegistr" runat="server" Text="Registeren" />
+            <asp:Button ID="btnRegistr" runat="server" Text="Registeren" OnClick="registreren" style="height: 26px" />
             <br />
         </asp:Panel>
         <br />
