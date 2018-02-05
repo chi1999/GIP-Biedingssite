@@ -42,14 +42,46 @@ namespace GIP_Biedingssite
 
             cmdRegistreren.Connection = cnn;
 
-            cmdRegistreren.CommandText = cnn;
+            cmdRegistreren.CommandText = "INSERT INTO Gebruiker(Voornaam, Familienaam, Wachtwoord, Email) VALUES(@Voornaam, @Familienaam, @Wachtwoord, @Email)";
 
-            string strSQL;
-            strSQL = "gip";
+            cmdRegistreren.Parameters.AddWithValue("@Voornaam", txtnaam.Text);
+            cmdRegistreren.Parameters.AddWithValue("@Familienaam", txtfnaam.Text);
+            cmdRegistreren.Parameters.AddWithValue("@Wachtwoord", txtww.Text);
+            cmdRegistreren.Parameters.AddWithValue("@Email", txtemail.Text);
 
-            cmd.CommandText = strSQL;
             cnn.Open();
+
+            cmdRegistreren.ExecuteNonQuery();
+
             cnn.Close();
+        }
+
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+            OleDbCommand cmdLogin = new OleDbCommand();
+
+            cmdLogin.Connection = cnn;
+
+            cmdLogin.CommandText = "SELECT Count(Voornaam) AS aantal FROM Gebruiker WHERE Wachtwoord = '" + "@Wachtwoord" + "'";
+
+            cnn.Open();
+            int intOK;
+            intOK = Convert.ToInt16(cmdLogin.ExecuteScalar());
+            cnn.Close();
+
+            if (intOK > 0)
+            {
+                Server.Transfer("Artikelen.aspx");
+            }
+            else
+            {
+                lblNietJuist.Text = "u heeft een verkeerd paswoord ingegeven";
+            }
+
+
+
+
+
         }
     }
 }
