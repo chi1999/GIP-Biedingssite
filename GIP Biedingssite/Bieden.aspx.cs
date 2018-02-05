@@ -37,6 +37,8 @@ namespace GIP_Biedingssite
             Session["Startprijs"] = cmdStartprijs.ExecuteScalar();
             cnn.Close();
 
+
+
            // btnBieden.Text = Session["Startprijs"].ToString();
         }
         protected void Bieden(object sender, EventArgs e)
