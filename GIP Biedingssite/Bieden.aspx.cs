@@ -30,8 +30,14 @@ namespace GIP_Biedingssite
             OleDbCommand cmdStartprijs = new OleDbCommand();
             cmdStartprijs.Connection = cnn;
 
-            cmdStartprijs.CommandText = "StartPrijs FROM Artikel ";
+            cmdStartprijs.CommandText = "SELECT StartPrijs FROM Artikel WHERE ArtikelID = @artikel";
+            cmdStartprijs.Parameters.AddWithValue("@artikel", Session["ArtikelID"]);
 
+            cnn.Open();
+            Session["Startprijs"] = cmdStartprijs.ExecuteScalar();
+            cnn.Close();
+
+           // btnBieden.Text = Session["Startprijs"].ToString();
         }
         protected void Bieden(object sender, EventArgs e)
         {
