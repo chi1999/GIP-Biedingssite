@@ -19,6 +19,7 @@ namespace GIP_Biedingssite
         {
             PanelAddArtikel.Visible = true;
 
+
         }
     }
 }

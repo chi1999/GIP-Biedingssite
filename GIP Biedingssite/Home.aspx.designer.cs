@@ -67,6 +67,15 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.TextBox txtnaam;
         
         /// <summary>
+        /// rfvNaam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNaam;
+        
+        /// <summary>
         /// UserNameLabel1 control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,22 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.Label UserNameLabel1;
         
         /// <summary>
-        /// txtfnaam control.
+        /// txtfFamilieNaam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfnaam;
+        protected global::System.Web.UI.WebControls.TextBox txtfFamilieNaam;
+        
+        /// <summary>
+        /// rfvFamilienaam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFamilienaam;
         
         /// <summary>
         /// UserNameLabel2 control.
@@ -103,6 +121,15 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.TextBox txtww;
         
         /// <summary>
+        /// rfvWachtwoord control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWachtwoord;
+        
+        /// <summary>
         /// UserNameLabel3 control.
         /// </summary>
         /// <remarks>
@@ -119,6 +146,15 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txthww;
+        
+        /// <summary>
+        /// cvWachtwoord control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvWachtwoord;
         
         /// <summary>
         /// UserNameLabel6 control.
@@ -139,13 +175,13 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.TextBox txtemail;
         
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// rfvEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator rfvEmail;
         
         /// <summary>
         /// btnRegistr control.
@@ -184,6 +220,15 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.TextBox UserName;
         
         /// <summary>
+        /// LogNaam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator LogNaam;
+        
+        /// <summary>
         /// PasswordLabel control.
         /// </summary>
         /// <remarks>
@@ -200,6 +245,15 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Password;
+        
+        /// <summary>
+        /// LogWachtwoord control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator LogWachtwoord;
         
         /// <summary>
         /// LoginButton control.
