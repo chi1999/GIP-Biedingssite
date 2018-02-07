@@ -67,6 +67,15 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.TextBox txtNaam;
         
         /// <summary>
+        /// rfvNaam control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNaam;
+        
+        /// <summary>
         /// TxtPrijs control.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,31 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.TextBox TxtPrijs;
         
         /// <summary>
-        /// txtOmschrijving control.
+        /// rfvPrijs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtOmschrijving;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrijs;
+        
+        /// <summary>
+        /// txtBeschrijving control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBeschrijving;
+        
+        /// <summary>
+        /// rfvBeschrijving control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvBeschrijving;
         
         /// <summary>
         /// txtStartDatum control.
@@ -94,6 +121,15 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.TextBox txtStartDatum;
         
         /// <summary>
+        /// rfvSdatum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSdatum;
+        
+        /// <summary>
         /// txtEindDatum control.
         /// </summary>
         /// <remarks>
@@ -103,6 +139,15 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.TextBox txtEindDatum;
         
         /// <summary>
+        /// rfvEdatum control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEdatum;
+        
+        /// <summary>
         /// txtFoto control.
         /// </summary>
         /// <remarks>
@@ -110,6 +155,15 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFoto;
+        
+        /// <summary>
+        /// rfvFoto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvFoto;
         
         /// <summary>
         /// btnVerzenden control.

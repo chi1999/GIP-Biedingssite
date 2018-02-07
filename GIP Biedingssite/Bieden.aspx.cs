@@ -22,22 +22,12 @@ namespace GIP_Biedingssite
             {
 
                 lblMelding.Visible = false;
-
-                if (Convert.ToDateTime(Session["Einddatum"]) < DateTime.Today)
-                {
-                    pnlBieden.Visible = false;
-                    lblFout.Visible = true;
-                    lblFout.Text = "Het bieden voor dit artikel is afgesloten.";
-                }
-                else
-                {
-                    lblFout.Visible = false;
-                }
-
             }
 
+            
+
             Session["gebruiker"] = 2;
-            Session["ArtikelID"] = 2;
+            Session["ArtikelID"] = 3;
 
             dtsArtikel.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
             ddvArtikel.DataBind();
@@ -61,22 +51,45 @@ namespace GIP_Biedingssite
             Session["Startprijs"] = Convert.ToInt32(drGegevens[0]);
             Session["Einddatum"] = Convert.ToDateTime(drGegevens[1]);
             }
-            
 
+            lblArtikel.Text = Session["Startprijs"].ToString();
             cnn.Close();
 
             OleDbCommand cmdhoogste = new OleDbCommand();
             cmdhoogste.Connection = cnn;
 
-            cmdhoogste.CommandText = "SELECT TOP 1 Bod.Bod, Artikel.ArtikelID FROM Gebruiker INNER JOIN(Artikel INNER JOIN Bod ON Artikel.ArtikelID = Bod.ArtikelID) ON Gebruiker.GebruikerID = Bod.GebruikerID ORDER BY Bod.BodID DESC";
+            cmdhoogste.CommandText = "SELECT TOP 1 Bod.Bod, Artikel.ArtikelID FROM Gebruiker INNER JOIN(Artikel INNER JOIN Bod ON Artikel.ArtikelID = Bod.ArtikelID) ON Gebruiker.GebruikerID = Bod.GebruikerID WHERE Bod.ArtikelID = @artikel ORDER BY BodID DESC";
             
             cmdhoogste.Parameters.AddWithValue("@artikel", Session["ArtikelID"]);
 
             cnn.Open();
             Session["HBod"] = cmdhoogste.ExecuteScalar();
-            cnn.Close();
 
+            //OleDbDataReader drhbod = cmdhoogste.ExecuteReader();
+            //while (drhbod.Read())
+            //{
+            //    Session["HBod"] = drhbod[0];
+            //    Session["aantal"] = drhbod[1];
+            //}
             
+            cnn.Close();
+            if (Convert.ToInt16(Session["HBod"]) <= 0)
+            {
+                Session["HBod"] = 0;
+            }
+
+           
+            if (Convert.ToDateTime(Session["Einddatum"]) < DateTime.Today)
+            {
+                pnlBieden.Visible = false;
+                lblFout.Visible = true;
+                lblFout.Text = "Het bieden voor dit artikel is afgesloten.";
+            }
+            else
+            {
+                pnlBieden.Visible = true;
+                lblFout.Visible = false;
+            }
 
 
         }
@@ -89,9 +102,10 @@ namespace GIP_Biedingssite
             IPAddress[] addr = ipEntry.AddressList;
             string myIP = addr[addr.Length - 2].ToString();
 
-            if (intbod > Convert.ToInt32(Session["HBod"]))
+            //lblbeheerder.Text = Session["Startprijs"].ToString();
+            if (intbod > Convert.ToInt32(Session["HBod"].ToString()))
             {
-                if (intbod > Convert.ToInt32(Session["Startprijs"]))
+                if (intbod > Convert.ToInt32(Session["Startprijs"].ToString()))
                 {
                     OleDbCommand cmd = new OleDbCommand();
                     cmd.Connection = cnn;
@@ -114,18 +128,18 @@ namespace GIP_Biedingssite
                     cnn.Close();
 
                     lblMelding.Visible = true;
-                    lblMelding.Text = "Uw bod is geplaats op " + DateTime.Today.Date;
+                    lblMelding.Text = "Uw bod is geplaatst op " + DateTime.Today.Date;
                 }
                 else
                 {
                     lblMelding.Visible = true;
-                    lblMelding.Text = "Het bedrag moet hoger zijn dan " + Session["Startprijs"];
+                    lblMelding.Text = "Het bedrag moet hoger zijn dan " + Session["Startprijs"].ToString();
                 }
             }
             else
             {
                 lblMelding.Visible = true;
-                lblMelding.Text = "Het bedrag moet hoger zijn dan " + Session["HBod"];
+                lblMelding.Text = "Het bedrag moet hoger zijn dan het hoogste bod " + Session["HBod"].ToString();
 
             }
 
