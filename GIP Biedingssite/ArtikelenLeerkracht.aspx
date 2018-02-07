@@ -36,16 +36,22 @@
         <asp:TextBox ID="txtArtikelID" runat="server"></asp:TextBox>
         <br />
         Naam:<asp:TextBox ID="txtNaam" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvNaam" runat="server" ControlToValidate="txtNaam" ErrorMessage="Gelieve een naam in te vullen"></asp:RequiredFieldValidator>
         <br />
-        Startprijs:<asp:TextBox ID="TxtPrijs" runat="server"></asp:TextBox>
+        Startprijs:<asp:TextBox ID="TxtPrijs" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvPrijs" runat="server" ErrorMessage="Gelieve een prijs in te voegen" ControlToValidate="TxtPrijs"></asp:RequiredFieldValidator>
         <br />
-        Beschrijving:<asp:TextBox ID="txtOmschrijving" runat="server"></asp:TextBox>
+        Beschrijving:<asp:TextBox ID="txtBeschrijving" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvBeschrijving" runat="server" ErrorMessage="Gelieve een beschrijving toe te voegen" ControlToValidate="txtBeschrijving"></asp:RequiredFieldValidator>
         <br />
-        Startdatum:<asp:TextBox ID="txtStartDatum" runat="server"></asp:TextBox>
+        Startdatum:<asp:TextBox ID="txtStartDatum" runat="server" TextMode="DateTime"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvSdatum" runat="server" ErrorMessage="Gelieve een startdatum toe te voegen" ControlToValidate="txtStartDatum"></asp:RequiredFieldValidator>
         <br />
-        Einddatum:<asp:TextBox ID="txtEindDatum" runat="server"></asp:TextBox>
+        Einddatum:<asp:TextBox ID="txtEindDatum" runat="server" TextMode="Date"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvEdatum" runat="server" ErrorMessage="Gelieve een Einddatum toe te voegen" ControlToValidate="txtEindDatum"></asp:RequiredFieldValidator>
         <br />
         FotoNaam:<asp:TextBox ID="txtFoto" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvFoto" runat="server" ErrorMessage="Gelieve een foto toe te voegen" ControlToValidate="txtFoto"></asp:RequiredFieldValidator>
         <br />
         <asp:Button ID="btnVerzenden" runat="server" OnClick="Button2_Click" Text="Verzenden" />
     </asp:Panel>
