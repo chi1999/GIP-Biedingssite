@@ -5,15 +5,16 @@
     <asp:Label ID="lblArtikel" runat="server" Text="Artikel details:"></asp:Label>
     <asp:DetailsView ID="ddvArtikel" runat="server" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel" Height="50px" Width="125px" AllowPaging="True">
         <Fields>
+            <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/fotos/{0}">
+                <ControlStyle Height="50px" Width="50px" />
+            </asp:ImageField>
             <asp:BoundField DataField="Naam" HeaderText="Naam" SortExpression="Naam" />
             <asp:BoundField DataField="StartPrijs" HeaderText="StartPrijs" SortExpression="StartPrijs" />
             <asp:BoundField DataField="Beschrijving" HeaderText="Beschrijving" SortExpression="Beschrijving" />
             <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" ReadOnly="True" SortExpression="ArtikelID" />
             <asp:BoundField DataField="Startdatum" HeaderText="Startdatum" SortExpression="Startdatum" />
             <asp:BoundField DataField="Einddatum" HeaderText="Einddatum" SortExpression="Einddatum" />
-            <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" />
-            <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/foto's/{0}">
-            </asp:ImageField>
+            <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" Visible="False" />
         </Fields>
     </asp:DetailsView>
     <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Naam], [StartPrijs], [Beschrijving], [ArtikelID], [Startdatum], [Einddatum], [FotoNaam] FROM [Artikel]" OnSelecting="dtsArtikel_Selecting">
@@ -43,17 +44,21 @@
                 <asp:BoundField DataField="Moment" HeaderText="Moment" SortExpression="Moment" />
                 <asp:BoundField DataField="IPadres" HeaderText="IPadres" SortExpression="IPadres" />
                 <asp:BoundField DataField="Voornaam" HeaderText="Voornaam" SortExpression="Voornaam" />
-                <asp:BoundField DataField="GebruikerID" HeaderText="GebruikerID" InsertVisible="False" SortExpression="GebruikerID" Visible="False" />
+                <asp:BoundField DataField="GebruikerID" HeaderText="GebruikerID" InsertVisible="False" SortExpression="GebruikerID" />
                 <asp:BoundField DataField="Familienaam" HeaderText="Familienaam" SortExpression="Familienaam" />
                 <asp:BoundField DataField="Type" HeaderText="Type" SortExpression="Type" />
                 <asp:CheckBoxField DataField="Akoord" HeaderText="Akoord" SortExpression="Akoord" />
                 <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" SortExpression="ArtikelID" Visible="False" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="dtsbeheerder" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Bod.BodID, Bod.Bod, Bod.Moment, Bod.IPadres, Gebruiker.Voornaam, Gebruiker.GebruikerID, Gebruiker.Familienaam, Gebruiker.Type, Gebruiker.Akoord, Gebruiker.Email FROM Gebruiker, Bod WHERE Gebruiker.GebruikerID = Bod.GebruikerID ORDER BY Bod.Bod DESC"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="dtsbeheerder" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Bod.BodID, Bod.Bod, Bod.Moment, Bod.IPadres, Gebruiker.Voornaam, Gebruiker.GebruikerID, Gebruiker.Familienaam, Gebruiker.Type, Gebruiker.Akoord, Gebruiker.Email, Artikel.ArtikelID FROM Gebruiker, Bod, Artikel WHERE Gebruiker.GebruikerID = Bod.GebruikerID AND Bod.ArtikelID = Artikel.ArtikelID ORDER BY Bod.Bod DESC"></asp:SqlDataSource>
     </asp:Panel>
+    <asp:Panel ID="pnlBieden" runat="server">
+        <asp:TextBox ID="txtBod" runat="server"></asp:TextBox>
+        <asp:Button ID="btnBieden" runat="server" Height="26px" OnClick="Bieden" Text="Bod plaatsen" />
+        <asp:Label ID="lblMelding" runat="server" Text="Label" Visible="False"></asp:Label>
+    </asp:Panel>
+    <asp:Label ID="lblFout" runat="server" Text="Label" Visible="False"></asp:Label>
     <br />
-    <asp:TextBox ID="txtBod" runat="server"></asp:TextBox>
-    <asp:Button ID="btnBieden" runat="server" Height="26px" OnClick="Bieden" Text="Bod plaatsen" />
-    <asp:Label ID="lblMelding" runat="server" Text="Label" Visible="False"></asp:Label>
-</asp:Content>
+    </asp:Content>
