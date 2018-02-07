@@ -11,9 +11,12 @@
             <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" ReadOnly="True" SortExpression="ArtikelID" />
             <asp:BoundField DataField="Startdatum" HeaderText="Startdatum" SortExpression="Startdatum" />
             <asp:BoundField DataField="Einddatum" HeaderText="Einddatum" SortExpression="Einddatum" />
+            <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" />
+            <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/foto's/{0}">
+            </asp:ImageField>
         </Fields>
     </asp:DetailsView>
-    <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Naam, StartPrijs, Beschrijving, ArtikelID, Startdatum, Einddatum FROM Artikel" OnSelecting="dtsArtikel_Selecting">
+    <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Naam], [StartPrijs], [Beschrijving], [ArtikelID], [Startdatum], [Einddatum], [FotoNaam] FROM [Artikel]" OnSelecting="dtsArtikel_Selecting">
     </asp:SqlDataSource>
     <asp:Panel ID="pnlGebruikers" runat="server">
         <br />
@@ -52,4 +55,5 @@
     <br />
     <asp:TextBox ID="txtBod" runat="server"></asp:TextBox>
     <asp:Button ID="btnBieden" runat="server" Height="26px" OnClick="Bieden" Text="Bod plaatsen" />
+    <asp:Label ID="lblMelding" runat="server" Text="Label" Visible="False"></asp:Label>
 </asp:Content>
