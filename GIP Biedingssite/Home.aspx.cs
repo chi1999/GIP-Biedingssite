@@ -31,6 +31,8 @@ namespace GIP_Biedingssite
         {
             pnlLogin.Visible = false;
             pnlregistr.Visible = true;
+            btnPnlInlog0.Visible = false;
+            btnPnlRegistr0.Visible = false;
 
         }
 
@@ -54,6 +56,10 @@ namespace GIP_Biedingssite
             cmdRegistreren.ExecuteNonQuery();
 
             cnn.Close();
+
+            pnlLogin.Visible = true;
+            UserName.Text = txtnaam.Text;
+            pnlregistr.Visible = false;
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
@@ -72,10 +78,12 @@ namespace GIP_Biedingssite
             intOK = Convert.ToInt16(cmdLogin.ExecuteScalar());
             cnn.Close();
 
+       
+
             if (intOK > 0)
             {
                 Session["gebruiker"] = intOK;
-                Server.Transfer("Artikelen.aspx");
+                Server.Transfer("Bieden.aspx");
             }
             else
             {
