@@ -30,7 +30,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <br />
-    <asp:Button ID="btnToevoegen" runat="server" OnClick="btnToevoegen_Click" Text="Toevoegen" />
+    <asp:Button ID="btnToevoegen" runat="server" OnClick="btnToevoegen_Click" Text="Toevoegen" Width="121px" />
     <asp:Panel ID="PanelAddArtikel" runat="server">
         ArtikelID:
         <asp:TextBox ID="txtArtikelID" runat="server"></asp:TextBox>

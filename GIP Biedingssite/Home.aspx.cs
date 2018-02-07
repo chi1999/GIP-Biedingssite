@@ -62,7 +62,10 @@ namespace GIP_Biedingssite
 
             cmdLogin.Connection = cnn;
 
-            cmdLogin.CommandText = "SELECT Count(Voornaam) AS aantal FROM Gebruiker WHERE Wachtwoord = '" + "@Wachtwoord" + "'";
+            cmdLogin.CommandText = "SELECT gebruikerId FROM Gebruiker WHERE Wachtwoord = @Wachtwoord AND email = @Gebruikersnaam";
+
+            cmdLogin.Parameters.AddWithValue("@Wachtwoord", Password.Text);
+            cmdLogin.Parameters.AddWithValue("@Gebruikersnaam", UserName.Text);
 
             cnn.Open();
             int intOK;
@@ -71,6 +74,7 @@ namespace GIP_Biedingssite
 
             if (intOK > 0)
             {
+                Session["gebruiker"] = intOK;
                 Server.Transfer("Artikelen.aspx");
             }
             else
@@ -83,5 +87,7 @@ namespace GIP_Biedingssite
 
 
         }
+
+    
     }
 }

@@ -20,7 +20,7 @@
             <br />
             <asp:Label ID="UserNameLabel2" runat="server" AssociatedControlID="UserName">Wachtwoord:</asp:Label>
             <asp:TextBox ID="txtww" runat="server" TextMode="Password"></asp:TextBox>
-            <br />
+            
             <br />
             <asp:Label ID="UserNameLabel3" runat="server" AssociatedControlID="UserName">herhaal wachtwoord</asp:Label>
             <asp:TextBox ID="txthww" runat="server" TextMode="Password"></asp:TextBox>
@@ -37,7 +37,7 @@
         <br />
         <asp:Panel ID="pnlLogin" runat="server" Visible="False">
             <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
-            <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+            <asp:TextBox ID="UserName" runat="server" Width="262px"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
