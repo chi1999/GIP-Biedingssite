@@ -69,14 +69,19 @@
   <ItemGroup>
     <Content Include="App_Data\biedingsite.accdb" />
     <Content Include="fotos\geodriehoek.jpg" />
-    <Content Include="fotos\LOGO GIP BIEDING%24ITE.png" />
-    <Content Include="fotos\Pennenzak.jpeg" />
-    <Content Include="fotos\Rekenmachine.jfif" />
-    <Content Include="fotos\turnkledij.jpg" />
+    <Content Include="ArtikelenLeerkracht.aspx">
+      <BrowseToURL>~/ArtikelenLeerkracht.aspx</BrowseToURL>
+    </Content>
+    <None Include="fotos\Logo biedingsite" />
+    <Content Include="fotos\Pennenzak.jpg" />
+    <Content Include="fotos\Rekenmachine.jpg" />
+    <Content Include="fotos\Sportkledij.jpg" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
     <Content Include="Home.aspx" />
-    <Content Include="Artikelen.aspx" />
+    <Content Include="ArtikelenLeerlingen.aspx">
+      <BrowseToURL>~/ArtikelenLeerlingen.aspx</BrowseToURL>
+    </Content>
     <Content Include="Bieden.aspx" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -96,7 +101,9 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterPage.Master.cs">
@@ -114,12 +121,12 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Artikelen.aspx.cs">
-      <DependentUpon>Artikelen.aspx</DependentUpon>
+    <Compile Include="ArtikelenLeerlingen.aspx.cs">
+      <DependentUpon>ArtikelenLeerlingen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Artikelen.aspx.designer.cs">
-      <DependentUpon>Artikelen.aspx</DependentUpon>
+    <Compile Include="ArtikelenLeerlingen.aspx.designer.cs">
+      <DependentUpon>ArtikelenLeerlingen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Bieden.aspx.cs">
       <DependentUpon>Bieden.aspx</DependentUpon>
@@ -127,6 +134,13 @@
     </Compile>
     <Compile Include="Bieden.aspx.designer.cs">
       <DependentUpon>Bieden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtikelenLeerkracht.aspx.cs">
+      <DependentUpon>ArtikelenLeerkracht.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtikelenLeerkracht.aspx.designer.cs">
+      <DependentUpon>ArtikelenLeerkracht.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
