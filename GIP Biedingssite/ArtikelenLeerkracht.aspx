@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikelLeerkracht">
+    <asp:GridView ID="dgvArtikelenLeerkrachten" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikelLeerkracht">
         <Columns>
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
             <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" ReadOnly="True" SortExpression="ArtikelID" />
@@ -33,21 +33,25 @@
     <asp:Button ID="btnToevoegen" runat="server" OnClick="btnToevoegen_Click" Text="Toevoegen" Width="121px" />
     <asp:Panel ID="PanelAddArtikel" runat="server">
         ArtikelID:
-        <asp:TextBox ID="txtArtikelID" runat="server" TextMode="Number"></asp:TextBox>
+        <asp:TextBox ID="txtArtikelID" runat="server"></asp:TextBox>
         <br />
         Naam:<asp:TextBox ID="txtNaam" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="rfvNaamArtikel" runat="server" ErrorMessage="Gelieve een naam in te vullen" ControlToValidate="txtFoto"></asp:RequiredFieldValidator>
         <br />
         Startprijs:<asp:TextBox ID="TxtPrijs" runat="server" TextMode="Number"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="rfvPrijs" runat="server" ErrorMessage="Gelieve een prijs in te vullen" ControlToValidate="TxtPrijs"></asp:RequiredFieldValidator>
         <br />
-        Beschrijving:<asp:TextBox ID="txtOmschrijving" runat="server"></asp:TextBox>
+        Beschrijving:<asp:TextBox ID="txtBeschrijving" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvBeschrijving" runat="server" ControlToValidate="txtBeschrijving" ErrorMessage="Gelieve een beschrijving in te voegen"></asp:RequiredFieldValidator>
         <br />
         Startdatum:<asp:TextBox ID="txtStartDatum" runat="server" TextMode="DateTime"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvSdatum" runat="server" ControlToValidate="txtStartDatum" ErrorMessage="Gelieve een startdatum in te voegen"></asp:RequiredFieldValidator>
         <br />
         Einddatum:<asp:TextBox ID="txtEindDatum" runat="server" TextMode="DateTime"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvEdatum" runat="server" ControlToValidate="txtEindDatum" ErrorMessage="Gelieve een einddatum in te voegen"></asp:RequiredFieldValidator>
         <br />
         FotoNaam:<asp:TextBox ID="txtFoto" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvFoto" runat="server" ControlToValidate="txtFoto" ErrorMessage="Gelieve een foto in te voegen"></asp:RequiredFieldValidator>
         <br />
         <asp:Button ID="btnVerzenden" runat="server" OnClick="Button2_Click" Text="Verzenden" />
     </asp:Panel>

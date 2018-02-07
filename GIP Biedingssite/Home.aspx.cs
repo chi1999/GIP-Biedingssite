@@ -37,7 +37,7 @@ namespace GIP_Biedingssite
 
         protected void registreren(object sender, EventArgs e)
         {
-
+            
 
             OleDbCommand cmdRegistreren = new OleDbCommand();
 
