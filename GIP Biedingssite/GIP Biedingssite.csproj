@@ -72,7 +72,7 @@
     <Content Include="ArtikelenLeerkracht.aspx">
       <BrowseToURL>~/ArtikelenLeerkracht.aspx</BrowseToURL>
     </Content>
-    <None Include="fotos\Logo biedingsite" />
+    <Content Include="fotos\LOGO GIP BIEDING%24ITE.png" />
     <Content Include="fotos\Pennenzak.jpg" />
     <Content Include="fotos\Rekenmachine.jpg" />
     <Content Include="fotos\Sportkledij.jpg" />
