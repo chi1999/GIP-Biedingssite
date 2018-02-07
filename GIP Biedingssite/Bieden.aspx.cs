@@ -20,27 +20,49 @@ namespace GIP_Biedingssite
         {
             if (!IsPostBack)
             {
+
                 lblMelding.Visible = false;
-                
-            }          
+
+                if (Convert.ToDateTime(Session["Einddatum"]) < DateTime.Today)
+                {
+                    pnlBieden.Visible = false;
+                    lblFout.Visible = true;
+                    lblFout.Text = "Het bieden voor dit artikel is afgesloten.";
+                }
+                else
+                {
+                    lblFout.Visible = false;
+                }
+
+            }
 
             Session["gebruiker"] = 2;
-            Session["ArtikelID"] = 1;
+            Session["ArtikelID"] = 2;
 
-            //dtsArtikel.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
-            //ddvArtikel.DataBind();
+            dtsArtikel.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
+            ddvArtikel.DataBind();
 
-            //dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
-            //gdvGebruiker.DataBind();
+            dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
+            gdvGebruiker.DataBind();
+
+            dtsbeheerder.FilterExpression = "ArtikelID =" + Session["ArtikelID"];
+            gdvbeheerder.DataBind();
 
             OleDbCommand cmdStartprijs = new OleDbCommand();
             cmdStartprijs.Connection = cnn;
 
-            cmdStartprijs.CommandText = "SELECT StartPrijs FROM Artikel WHERE ArtikelID = @artikel";
+            cmdStartprijs.CommandText = "SELECT StartPrijs, Einddatum FROM Artikel WHERE ArtikelID = @artikel";
             cmdStartprijs.Parameters.AddWithValue("@artikel", Session["ArtikelID"]);
 
             cnn.Open();
-            Session["Startprijs"] = Convert.ToInt32(cmdStartprijs.ExecuteScalar());
+            OleDbDataReader drGegevens = cmdStartprijs.ExecuteReader();
+            while (drGegevens.Read())
+            {
+            Session["Startprijs"] = Convert.ToInt32(drGegevens[0]);
+            Session["Einddatum"] = Convert.ToDateTime(drGegevens[1]);
+            }
+            
+
             cnn.Close();
 
             OleDbCommand cmdhoogste = new OleDbCommand();
@@ -54,9 +76,9 @@ namespace GIP_Biedingssite
             Session["HBod"] = cmdhoogste.ExecuteScalar();
             cnn.Close();
 
+            
 
 
-           // btnBieden.Text = Session["HBod"].ToString();
         }
         protected void Bieden(object sender, EventArgs e)
         {
@@ -66,10 +88,6 @@ namespace GIP_Biedingssite
             IPHostEntry ipEntry = System.Net.Dns.GetHostEntry(strHostName);
             IPAddress[] addr = ipEntry.AddressList;
             string myIP = addr[addr.Length - 2].ToString();
-            //btnBieden.Text = myIP;
-
-            //int intgeboden = Convert.ToInt32(ddvArtikel.Rows);
-
 
             if (intbod > Convert.ToInt32(Session["HBod"]))
             {
@@ -110,10 +128,6 @@ namespace GIP_Biedingssite
                 lblMelding.Text = "Het bedrag moet hoger zijn dan " + Session["HBod"];
 
             }
-
-
-
-
 
         }
 
