@@ -17,7 +17,7 @@ namespace GIP_Biedingssite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnPnlInlog_Click(object sender, EventArgs e)
@@ -29,26 +29,35 @@ namespace GIP_Biedingssite
 
         protected void btnPnlRegistr_Click(object sender, EventArgs e)
         {
+            pnlAkkoord.Visible = true;
             pnlLogin.Visible = false;
             pnlregistr.Visible = true;
             btnPnlInlog0.Visible = false;
             btnPnlRegistr0.Visible = false;
+            
         }
 
         protected void registreren(object sender, EventArgs e)
         {
-            
+            bool ok = false;
+
+            if (ckbAkkoord.Checked==true)
+            {
+                ok = true;
+            }
 
             OleDbCommand cmdRegistreren = new OleDbCommand();
 
             cmdRegistreren.Connection = cnn;
 
-            cmdRegistreren.CommandText = "INSERT INTO Gebruiker(Voornaam, Familienaam, Wachtwoord, Email) VALUES(@Voornaam, @Familienaam, @Wachtwoord, @Email)";
+            cmdRegistreren.CommandText = "INSERT INTO Gebruiker(Voornaam, Familienaam, Wachtwoord, Email, Type, Akoord) VALUES(@Voornaam, @Familienaam, @Wachtwoord, @Email, @Type, @Akkoord)";
 
             cmdRegistreren.Parameters.AddWithValue("@Voornaam", txtnaam.Text);
-           // cmdRegistreren.Parameters.AddWithValue("@Familienaam", txtfFamilieNaam.Text);
+            cmdRegistreren.Parameters.AddWithValue("@Familienaam", txtfnaam.Text);
             cmdRegistreren.Parameters.AddWithValue("@Wachtwoord", txtww.Text);
             cmdRegistreren.Parameters.AddWithValue("@Email", txtemail.Text);
+            cmdRegistreren.Parameters.AddWithValue("@Type", "L");
+            cmdRegistreren.Parameters.AddWithValue("@Akkoord", ok);
 
             cnn.Open();
 

@@ -38,6 +38,11 @@
             <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtemail" ErrorMessage="Verplicht veld!"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtemail" ErrorMessage="Het veld is niet herkend als email adres" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
+            <br /><asp:Panel ID="pnlAkkoord" runat="server" Visible="False" BackColor="#CCCCFF">
+                tekst voor akkoord:<br />
+                <br />
+                <asp:CheckBox ID="ckbAkkoord" runat="server" Text="Akkoord" />
+            </asp:Panel>
             <br />
             <asp:Button ID="btnRegistr" runat="server" Text="Registeren" OnClick="registreren" style="height: 26px" />
             <br />
@@ -53,8 +58,11 @@
             <asp:TextBox ID="Password" runat="server" TextMode="Password" Width="128px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvPasswoord" runat="server" ControlToValidate="Password" ErrorMessage="Verplicht veld!"></asp:RequiredFieldValidator>
             <br />
+          
+            <br />
             <br />
             <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" Width="53px" OnClick="LoginButton_Click" />
             <asp:Label ID="lblNietJuist" runat="server"></asp:Label>
-        </asp:Panel>
+        </asp:Panel> 
+        
 </asp:Content>
