@@ -46,7 +46,7 @@ namespace GIP_Biedingssite
             cmdRegistreren.CommandText = "INSERT INTO Gebruiker(Voornaam, Familienaam, Wachtwoord, Email) VALUES(@Voornaam, @Familienaam, @Wachtwoord, @Email)";
 
             cmdRegistreren.Parameters.AddWithValue("@Voornaam", txtnaam.Text);
-            cmdRegistreren.Parameters.AddWithValue("@Familienaam", txtfFamilieNaam.Text);
+           // cmdRegistreren.Parameters.AddWithValue("@Familienaam", txtfFamilieNaam.Text);
             cmdRegistreren.Parameters.AddWithValue("@Wachtwoord", txtww.Text);
             cmdRegistreren.Parameters.AddWithValue("@Email", txtemail.Text);
 
