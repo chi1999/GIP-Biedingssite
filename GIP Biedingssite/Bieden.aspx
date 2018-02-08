@@ -2,25 +2,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="lblArtikel" runat="server" Text="Artikel details:" BackColor="#99FF66"></asp:Label>
-    <asp:DetailsView ID="ddvArtikel" runat="server" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel" Height="50px" Width="125px" AllowPaging="True">
-        <Fields>
-            <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/fotos/{0}">
-                <ControlStyle Height="50px" Width="50px" />
-            </asp:ImageField>
-            <asp:BoundField DataField="Naam" HeaderText="Naam" SortExpression="Naam" />
-            <asp:BoundField DataField="StartPrijs" HeaderText="StartPrijs" SortExpression="StartPrijs" />
-            <asp:BoundField DataField="Beschrijving" HeaderText="Beschrijving" SortExpression="Beschrijving" />
-            <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" ReadOnly="True" SortExpression="ArtikelID" />
-            <asp:BoundField DataField="Startdatum" HeaderText="Startdatum" SortExpression="Startdatum" />
-            <asp:BoundField DataField="Einddatum" HeaderText="Einddatum" SortExpression="Einddatum" />
-            <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" Visible="False" />
-        </Fields>
-    </asp:DetailsView>
-    <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Naam], [StartPrijs], [Beschrijving], [ArtikelID], [Startdatum], [Einddatum], [FotoNaam] FROM [Artikel]" OnSelecting="dtsArtikel_Selecting">
-    </asp:SqlDataSource>
+    <asp:Label ID="lblArtikel" runat="server" Text="Artikel details:"></asp:Label>
     <asp:Panel ID="pnlGebruikers" runat="server">
         <br />
+        <asp:DetailsView ID="ddvArtikel" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel" Height="50px" Width="125px">
+            <Fields>
+                <asp:BoundField DataField="Naam" HeaderText="Naam" SortExpression="Naam" />
+                <asp:BoundField DataField="StartPrijs" HeaderText="StartPrijs" SortExpression="StartPrijs" />
+                <asp:BoundField DataField="Beschrijving" HeaderText="Beschrijving" SortExpression="Beschrijving" />
+                <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" ReadOnly="True" SortExpression="ArtikelID" />
+                <asp:BoundField DataField="Startdatum" HeaderText="Startdatum" SortExpression="Startdatum" />
+                <asp:BoundField DataField="Einddatum" HeaderText="Einddatum" SortExpression="Einddatum" />
+                <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" />
+            </Fields>
+        </asp:DetailsView>
+        <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" OnSelecting="dtsArtikel_Selecting" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Naam], [StartPrijs], [Beschrijving], [ArtikelID], [Startdatum], [Einddatum], [FotoNaam] FROM [Artikel]"></asp:SqlDataSource>
         <asp:Label ID="lblgebruikers" runat="server" Text="Reeds geboden:"></asp:Label>
         <asp:GridView ID="gdvGebruiker" runat="server" AutoGenerateColumns="False" DataSourceID="dtsGebruikers">
             <Columns>
@@ -36,6 +32,40 @@
     </asp:Panel>
     <asp:Panel ID="pnlBeheerder" runat="server">
         <br />
+        <asp:DetailsView ID="ddvArtikel0" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel0" Height="50px" Width="125px">
+            <Fields>
+                <asp:BoundField DataField="Naam" HeaderText="Naam" SortExpression="Naam" />
+                <asp:BoundField DataField="StartPrijs" HeaderText="StartPrijs" SortExpression="StartPrijs" />
+                <asp:BoundField DataField="Beschrijving" HeaderText="Beschrijving" SortExpression="Beschrijving" />
+                <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" ReadOnly="True" SortExpression="ArtikelID" />
+                <asp:BoundField DataField="Startdatum" HeaderText="Startdatum" SortExpression="Startdatum" />
+                <asp:BoundField DataField="Einddatum" HeaderText="Einddatum" SortExpression="Einddatum" />
+                <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" />
+            </Fields>
+        </asp:DetailsView>
+        <asp:SqlDataSource ID="dtsArtikel0" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" DeleteCommand="DELETE FROM [Artikel] WHERE [ArtikelID] = ?" InsertCommand="INSERT INTO [Artikel] ([Naam], [StartPrijs], [Beschrijving], [ArtikelID], [Startdatum], [Einddatum], [FotoNaam]) VALUES (?, ?, ?, ?, ?, ?, ?)" OnSelecting="dtsArtikel_Selecting" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Naam], [StartPrijs], [Beschrijving], [ArtikelID], [Startdatum], [Einddatum], [FotoNaam] FROM [Artikel]" UpdateCommand="UPDATE [Artikel] SET [Naam] = ?, [StartPrijs] = ?, [Beschrijving] = ?, [Startdatum] = ?, [Einddatum] = ?, [FotoNaam] = ? WHERE [ArtikelID] = ?">
+            <DeleteParameters>
+                <asp:Parameter Name="ArtikelID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="Naam" Type="String" />
+                <asp:Parameter Name="StartPrijs" Type="Double" />
+                <asp:Parameter Name="Beschrijving" Type="String" />
+                <asp:Parameter Name="ArtikelID" Type="Int32" />
+                <asp:Parameter Name="Startdatum" Type="DateTime" />
+                <asp:Parameter Name="Einddatum" Type="DateTime" />
+                <asp:Parameter Name="FotoNaam" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="Naam" Type="String" />
+                <asp:Parameter Name="StartPrijs" Type="Double" />
+                <asp:Parameter Name="Beschrijving" Type="String" />
+                <asp:Parameter Name="Startdatum" Type="DateTime" />
+                <asp:Parameter Name="Einddatum" Type="DateTime" />
+                <asp:Parameter Name="FotoNaam" Type="String" />
+                <asp:Parameter Name="ArtikelID" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
         <asp:Label ID="lblbeheerder" runat="server" Text="Geboden gebruikers:"></asp:Label>
         <asp:GridView ID="gdvbeheerder" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="dtsbeheerder">
             <Columns>

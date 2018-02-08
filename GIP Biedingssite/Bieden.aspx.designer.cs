@@ -22,6 +22,15 @@ namespace GIP_Biedingssite {
         protected global::System.Web.UI.WebControls.Label lblArtikel;
         
         /// <summary>
+        /// pnlGebruikers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlGebruikers;
+        
+        /// <summary>
         /// ddvArtikel control.
         /// </summary>
         /// <remarks>
@@ -38,15 +47,6 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dtsArtikel;
-        
-        /// <summary>
-        /// pnlGebruikers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlGebruikers;
         
         /// <summary>
         /// lblgebruikers control.
@@ -83,6 +83,24 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlBeheerder;
+        
+        /// <summary>
+        /// ddvArtikel0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DetailsView ddvArtikel0;
+        
+        /// <summary>
+        /// dtsArtikel0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dtsArtikel0;
         
         /// <summary>
         /// lblbeheerder control.

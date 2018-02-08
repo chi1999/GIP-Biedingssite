@@ -18,13 +18,18 @@ namespace GIP_Biedingssite
         public static OleDbConnection cnn = new OleDbConnection(strconnectie);
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["SoortGebr"] = "L";
+            
+            if (Session["SoortGebr"].ToString() == "L" )
+            {
+
+            }
+
             if (!IsPostBack)
             {
 
                 lblMelding.Visible = false;
             }
-
-            
 
             Session["gebruiker"] = 2;
             Session["ArtikelID"] = 3;
@@ -65,13 +70,6 @@ namespace GIP_Biedingssite
             cnn.Open();
             Session["HBod"] = cmdhoogste.ExecuteScalar();
 
-            //OleDbDataReader drhbod = cmdhoogste.ExecuteReader();
-            //while (drhbod.Read())
-            //{
-            //    Session["HBod"] = drhbod[0];
-            //    Session["aantal"] = drhbod[1];
-            //}
-            
             cnn.Close();
             if (Convert.ToInt16(Session["HBod"]) <= 0)
             {
@@ -102,7 +100,6 @@ namespace GIP_Biedingssite
             IPAddress[] addr = ipEntry.AddressList;
             string myIP = addr[addr.Length - 2].ToString();
 
-            //lblbeheerder.Text = Session["Startprijs"].ToString();
             if (intbod > Convert.ToInt32(Session["HBod"].ToString()))
             {
                 if (intbod > Convert.ToInt32(Session["Startprijs"].ToString()))
