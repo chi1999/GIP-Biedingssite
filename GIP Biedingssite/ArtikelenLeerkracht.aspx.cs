@@ -19,8 +19,15 @@ namespace GIP_Biedingssite
             PanelAddArtikel.Visible = false;
          }
 
+        protected void gdvArtikelenLeerkrachten(object sender, EventArgs e)
+        {
+            Session["ArtikelID"] = gdvArtikelenLeerkracht.SelectedRow.Cells[1];
+            
+
+        }
         protected void btnToevoegen_Click(object sender, EventArgs e)
         {
+
             PanelAddArtikel.Visible = true;
 
             OleDbCommand cmdToevoegen = new OleDbCommand();
