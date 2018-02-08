@@ -39,7 +39,7 @@
             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtemail" ErrorMessage="Het veld is niet herkend als email adres" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
             <br /><asp:Panel ID="pnlAkkoord" runat="server" Visible="False" BackColor="#CCCCFF">
-                tekst voor akkoord:<br />
+                tekst voor akkoord:<br /> <br />
                 <br />
                 <asp:CheckBox ID="ckbAkkoord" runat="server" Text="Akkoord" />
             </asp:Panel>

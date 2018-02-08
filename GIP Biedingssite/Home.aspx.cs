@@ -71,12 +71,53 @@ namespace GIP_Biedingssite
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
+
+            OleDbCommand cmdLogin = new OleDbCommand();
             
+            cmdLogin.Connection = cnn;
+            
+            cmdLogin.CommandText = "SELECT gebruikerId, Type FROM Gebruiker WHERE Wachtwoord = @Wachtwoord AND email = @Gebruikersnaam";
+            
+            cmdLogin.Parameters.AddWithValue("@Wachtwoord", Password.Text);
+            cmdLogin.Parameters.AddWithValue("@Gebruikersnaam", UserName.Text);
+            
+            cnn.Open();
+            int intOK;
+            OleDbDataReader drGebruiker = cmdLogin.ExecuteReader();
+            int teller = 0;
+            while (drGebruiker.Read())
+            {
+                intOK = Convert.ToInt16(drGebruiker[0]);
+                string soortgebr = drGebruiker[1].ToString();
+                Session["gebruiker"] = intOK;
+                Session["SoortGebr"] = soortgebr;
+                teller++;
+            }
+            
+            cnn.Close();
+            
+                    if (teller > 0)
+                           {
+                    if (Session["SoortGebr"].ToString() == "P")
+                {
+                    Server.Transfer("ArtikelenLeerkrachten.aspx");
+                }
+                Server.Transfer("ArtikelenLeerlingen.aspx");
+                UserNameLabel.Text = Session["SoortGebr"] + Session["gebruiker"].ToString();
+                            }
+                       else
+                {
+                lblNietJuist.Text = "u heeft een verkeerd paswoord ingegeven";
+                        }
 
 
 
 
 
         }
+
+
+
+
     }
-}
+    }
