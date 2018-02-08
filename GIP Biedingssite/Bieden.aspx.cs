@@ -20,8 +20,17 @@ namespace GIP_Biedingssite
         {
             Session["SoortGebr"] = "L";
             
-            if (Session["SoortGebr"].ToString() == "L" )
+            if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
             {
+
+                pnlGebruikers.Visible = true;
+                pnlBeheerder.Visible = false;
+
+                if (Session["SoortGebr"].ToString() == "B")
+                {
+                    pnlBeheerder.Visible = true;
+                    pnlGebruikers.Visible = false;
+                }
 
             }
 
@@ -32,7 +41,7 @@ namespace GIP_Biedingssite
             }
 
             Session["gebruiker"] = 2;
-            Session["ArtikelID"] = 3;
+            Session["ArtikelID"] = 1;
 
             dtsArtikel.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
             ddvArtikel.DataBind();
