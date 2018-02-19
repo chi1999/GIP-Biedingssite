@@ -31,6 +31,10 @@ namespace GIP_Biedingssite
                     pnlBeheerder.Visible = true;
                     pnlGebruikers.Visible = false;
                 }
+                else
+                {
+                    Server.Transfer("Home.aspx");
+                }
 
             }
 
@@ -40,8 +44,8 @@ namespace GIP_Biedingssite
                 lblMelding.Visible = false;
             }
 
-            Session["gebruiker"] = 2;
-            Session["ArtikelID"] = 1;
+            //Session["gebruiker"] = 2;
+            //Session["ArtikelID"] = 1;
 
             dtsArtikel.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
             ddvArtikel.DataBind();
@@ -66,7 +70,7 @@ namespace GIP_Biedingssite
             Session["Einddatum"] = Convert.ToDateTime(drGegevens[1]);
             }
 
-            lblArtikel.Text = Session["Startprijs"].ToString();
+            //lblArtikel.Text = Session["Startprijs"].ToString();
             cnn.Close();
 
             OleDbCommand cmdhoogste = new OleDbCommand();

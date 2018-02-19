@@ -83,6 +83,7 @@
       <BrowseToURL>~/ArtikelenLeerlingen.aspx</BrowseToURL>
     </Content>
     <Content Include="Bieden.aspx" />
+    <Content Include="Profiel.aspx" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="ArtikelenLeerkracht.aspx.designer.cs">
       <DependentUpon>ArtikelenLeerkracht.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profiel.aspx.cs">
+      <DependentUpon>Profiel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiel.aspx.designer.cs">
+      <DependentUpon>Profiel.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

@@ -100,7 +100,7 @@ namespace GIP_Biedingssite
                            {
                     if (Session["SoortGebr"].ToString() == "P")
                 {
-                    Server.Transfer("ArtikelenLeerkrachten.aspx");
+                    Server.Transfer("ArtikelenLeerkracht.aspx");
                 }
                 Server.Transfer("ArtikelenLeerlingen.aspx");
                 UserNameLabel.Text = Session["SoortGebr"] + Session["gebruiker"].ToString();
