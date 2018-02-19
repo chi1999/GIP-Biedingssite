@@ -18,22 +18,22 @@ namespace GIP_Biedingssite
         public static OleDbConnection cnn = new OleDbConnection(strconnectie);
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["SoortGebr"] = "L";
-            
-            if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
+            //Session["SoortGebr"] = "L";
+          
+            if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P" || Session["SoortGebr"].ToString() == "B")
             {
+                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
+                {
 
-                pnlGebruikers.Visible = true;
-                pnlBeheerder.Visible = false;
+                    pnlGebruikers.Visible = true;
+                    pnlBeheerder.Visible = false;
+
+                }
 
                 if (Session["SoortGebr"].ToString() == "B")
                 {
                     pnlBeheerder.Visible = true;
                     pnlGebruikers.Visible = false;
-                }
-                else
-                {
-                    Server.Transfer("Home.aspx");
                 }
 
             }

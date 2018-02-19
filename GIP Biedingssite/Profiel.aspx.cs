@@ -11,35 +11,42 @@ namespace GIP_Biedingssite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session["SoortGebr"] = "B";
-            if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
+            if (!IsPostBack)
             {
-
-            }
-            else
-            {
-                if (Session["SoortGebr"].ToString() == "B")
+                Session["SoortGebr"] = "L";
+                Session["GebruikerID"] = 2;
+                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
                 {
-                    //Server.Transfer("Home.aspx");
+
                 }
                 else
                 {
-                    Server.Transfer("Home.aspx");
+                    if (Session["SoortGebr"].ToString() == "B")
+                    {
+                        //Server.Transfer("Home.aspx");
+                    }
+                    else
+                    {
+                        Server.Transfer("Home.aspx");
+                    }
                 }
+            
             }
 
             dtsGebruiker.FilterExpression = "GebruikerID = " + Session["gebruiker"];
-            dtsGebruiker.DataBind();
+            dtvGebruiker.DataBind();
 
             dtsGeboden.FilterExpression = "GebruikerID = " + Session["gebruiker"];
-            dtsGeboden.DataBind();
+            gdvBods.DataBind();
 
         }
 
         protected void gdvBods_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["ArtikelID"] = gdvBods.SelectedRow.Cells[2];
-            Server.Transfer("Bieden.aspx");
+            
+            Session["ArtikelID"] = gdvBods.SelectedRow.Cells[1];
+            TextBox1.Text = Session["ArtikelID"].ToString();
+            //Server.Transfer("Bieden.aspx");
 
         }
     }
