@@ -8,7 +8,7 @@
             <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" ReadOnly="True" SortExpression="ArtikelID" />
             <asp:BoundField DataField="Naam" HeaderText="Naam" SortExpression="Naam" />
             <asp:BoundField DataField="StartPrijs" DataFormatString="{0:C}" HeaderText="StartPrijs" SortExpression="StartPrijs" />
-            <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/fotos/{0}">
+            <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/fotos/{0}" HeaderText="Foto">
             </asp:ImageField>
         </Columns>
         <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
@@ -60,7 +60,7 @@
         <asp:RequiredFieldValidator ID="rfvEdatum" runat="server" ErrorMessage="Gelieve een einddatum toe te voegen" ControlToValidate="txtEindDatum"></asp:RequiredFieldValidator>
         <br />
         FotoNaam:<asp:FileUpload ID="fileupFoto" runat="server" />
-        <asp:RequiredFieldValidator ID="rfvFoto" runat="server" ErrorMessage="Gelieve een foto toe te voegen" ControlToValidate="txtFoto"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="rfvFoto" runat="server" ErrorMessage="Gelieve een foto toe te voegen" ControlToValidate="fileupFoto"></asp:RequiredFieldValidator>
         <br />
         <br />
         <asp:Button ID="btnVerzenden" runat="server" OnClick="btnVerzenden_Click" Text="Verzenden" />

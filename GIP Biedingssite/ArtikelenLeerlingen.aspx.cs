@@ -17,15 +17,13 @@ namespace GIP_Biedingssite
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            gdvArtikelenLeerling.Visible = true;
         }
 
-        protected void gdvArtikelenLeerling_SelectedIndexChanged(object sender, EventArgs e)
+        protected void dgvArtikelenLeerling_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["ArtikelID"] = gdvArtikelenLeerling.SelectedRow.Cells[1];
+            Session["ArtikelID"]= gdvArtikelenLeerling.SelectedRow.Cells[1].Text;
             Server.Transfer("Bieden.aspx");
-         
         }
-
     }
 }

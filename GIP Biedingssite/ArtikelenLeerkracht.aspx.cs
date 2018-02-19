@@ -41,29 +41,28 @@ namespace GIP_Biedingssite
 
             string strtoevoegen;
 
-            strtoevoegen = "INSERT INTO Artikel(ArtikelID, Naam, Startprijs, Beschrijving, Startdatum, Einddatum ) ";
-            strtoevoegen += "VALUES(@ID, @naam, @prijs, @beschrijving, @Sdatum, @Edatum)";
+            strtoevoegen = "INSERT INTO Artikel(Naam, Startprijs, Beschrijving, Startdatum, Einddatum, FotoNaam ) ";
+            strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum, @foto)";
 
-            cmdToevoegen.Parameters.AddWithValue("@ID", Convert.ToInt16(txtArtikelID.Text));
+
             cmdToevoegen.Parameters.AddWithValue("@naam", txtNaam.Text);
             cmdToevoegen.Parameters.AddWithValue("@prijs", Convert.ToInt16(TxtPrijs.Text));
             cmdToevoegen.Parameters.AddWithValue("@beschrijving", txtBeschrijving.Text);
             cmdToevoegen.Parameters.AddWithValue("@Sdatum", Convert.ToDateTime(txtStartDatum.Text));
             cmdToevoegen.Parameters.AddWithValue("@Edatum", Convert.ToDateTime(txtEindDatum.Text));
-           // cmdToevoegen.Parameters.AddWithValue("@foto", fileupFoto.);
-
+            
             // Naam van het gekozen bestand en doelpad nieuwe foto
             string strBestandsnaam, strDoelpad, strNummer;
 
             strBestandsnaam = System.IO.Path.GetFileName(fileupFoto.PostedFile.FileName);
-            strDoelpad = Server.MapPath("Images" + @"\" + strBestandsnaam);
+            strDoelpad = Server.MapPath("fotos" + @"\" + strBestandsnaam);
 
             //Bestand opslaan in map op de internetserver
 
             fileupFoto.PostedFile.SaveAs(strDoelpad);
 
             //Ophalen sleutel
-            strNummer = Session["Lidnr"].ToString();
+            strNummer = Session["ArtikelID"].ToString();
 
             //Bijwerken record via connected toegang
 
@@ -71,7 +70,7 @@ namespace GIP_Biedingssite
             cmd.Connection = cnn;
 
             string strsql;
-            strsql = "UPDATE tblArtikel SET Foto=@foto ";
+            strsql = "UPDATE tblArtikel SET Foto= @foto ";
             strsql += " WHERE ArtikelID = @ID";
 
             cmd.CommandText = strsql;
@@ -83,7 +82,7 @@ namespace GIP_Biedingssite
             cnn.Close();
 
             //Terug naar vorige webpagina
-            Server.Transfer("Artikeleerkracht.aspx");
+            Server.Transfer("ArtikelenLeerkracht.aspx");
 
             cmdToevoegen.CommandText = strtoevoegen;
             cnn.Open();
