@@ -139,6 +139,10 @@ namespace GIP_Biedingssite
 
                     lblMelding.Visible = true;
                     lblMelding.Text = "Uw bod is geplaatst op " + DateTime.Today.Date;
+                    dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
+                    gdvGebruiker.DataBind();
+                    
+
                 }
                 else
                 {
@@ -155,9 +159,7 @@ namespace GIP_Biedingssite
 
         }
 
-        protected void dtsArtikel_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
-        }
+       
+        
     }
 }

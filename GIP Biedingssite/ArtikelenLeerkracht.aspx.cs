@@ -21,7 +21,7 @@ namespace GIP_Biedingssite
 
         protected void gdvArtikelenLeerkrachten(object sender, EventArgs e)
         {
-            Session["ArtikelID"] = gdvArtikelenLeerkracht.SelectedRow.Cells[1];
+            Session["ArtikelID"] = gdvArtikelenLeerkracht.SelectedRow.Cells[1].Text;
 
             Server.Transfer("Bieden.aspx");
 

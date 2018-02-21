@@ -65,7 +65,7 @@ namespace GIP_Biedingssite
 
             cnn.Close();
             pnlLogin.Visible = true;
-            UserName.Text = txtnaam.Text;
+            UserName.Text = txtemail.Text;
             pnlregistr.Visible = false;
         }
 
