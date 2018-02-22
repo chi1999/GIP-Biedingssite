@@ -5,7 +5,7 @@
     <asp:Label ID="lblArtikel" runat="server" Text="Artikel details:"></asp:Label>
     <asp:Panel ID="pnlGebruikers" runat="server">
         <br />
-        <asp:DetailsView ID="ddvArtikel" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel" Height="50px" Width="125px">
+        <asp:DetailsView ID="ddvArtikel" runat="server" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel" Height="50px" Width="125px">
             <Fields>
                 <asp:BoundField DataField="Naam" HeaderText="Naam" SortExpression="Naam" />
                 <asp:BoundField DataField="StartPrijs" HeaderText="StartPrijs" SortExpression="StartPrijs" />

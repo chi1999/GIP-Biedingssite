@@ -13,23 +13,31 @@ namespace GIP_Biedingssite
         {
             if (!IsPostBack)
             {
-                Session["SoortGebr"] = "L";
-                Session["GebruikerID"] = 2;
-                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
+                //Session["SoortGebr"] = "L";
+                //Session["gebruiker"] = 2;
+                try
                 {
-
-                }
-                else
-                {
-                    if (Session["SoortGebr"].ToString() == "B")
+                    if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
                     {
-                        //Server.Transfer("Home.aspx");
+
                     }
                     else
                     {
-                        Server.Transfer("Home.aspx");
+                        if (Session["SoortGebr"].ToString() == "B")
+                        {
+                            //Server.Transfer("Home.aspx");
+                        }
+                        else
+                        {
+                            Server.Transfer("Home.aspx");
+                        }
                     }
                 }
+                catch
+                {
+                    Server.Transfer("Home.aspx");
+                }
+                
             
             }
 
@@ -44,9 +52,9 @@ namespace GIP_Biedingssite
         protected void gdvBods_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            Session["ArtikelID"] = gdvBods.SelectedRow.Cells[1];
-            TextBox1.Text = Session["ArtikelID"].ToString();
-            //Server.Transfer("Bieden.aspx");
+            Session["ArtikelID"] = gdvBods.SelectedRow.Cells[2].Text;
+            
+            Server.Transfer("Bieden.aspx");
 
         }
     }
