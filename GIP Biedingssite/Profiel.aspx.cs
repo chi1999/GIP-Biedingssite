@@ -57,5 +57,10 @@ namespace GIP_Biedingssite
             Server.Transfer("Bieden.aspx");
 
         }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

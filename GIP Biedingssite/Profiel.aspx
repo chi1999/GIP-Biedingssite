@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="lblGebruiker" runat="server" Text="Persoonlijke gegevens:"></asp:Label>
-    <asp:DetailsView ID="dtvGebruiker" runat="server" AutoGenerateRows="False" DataSourceID="dtsGebruiker" Height="50px" Width="125px" DataKeyNames="GebruikerID">
+    <asp:DetailsView ID="dtvGebruiker" runat="server" AutoGenerateRows="False" DataSourceID="dtsGebruiker" Height="50px" Width="156px" DataKeyNames="GebruikerID">
         <Fields>
             <asp:BoundField DataField="GebruikerID" HeaderText="GebruikerID" InsertVisible="False" ReadOnly="True" SortExpression="GebruikerID" />
             <asp:BoundField DataField="Voornaam" HeaderText="Voornaam" SortExpression="Voornaam" />
@@ -13,9 +13,9 @@
         </Fields>
     </asp:DetailsView>
     <asp:SqlDataSource ID="dtsGebruiker" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Voornaam], [Familienaam], [Email], [Type], [GebruikerID] FROM [Gebruiker]"></asp:SqlDataSource>
-    <p>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    </p>
+    <br />
+        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+    <br />
     <asp:GridView ID="gdvBods" runat="server" AutoGenerateColumns="False" DataSourceID="dtsGeboden" OnSelectedIndexChanged="gdvBods_SelectedIndexChanged">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
