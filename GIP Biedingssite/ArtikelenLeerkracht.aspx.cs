@@ -70,7 +70,7 @@ namespace GIP_Biedingssite
             cmd.Connection = cnn;
 
             string strsql;
-            strsql = "UPDATE tblArtikel SET Foto= @foto ";
+            strsql = "UPDATE Artikel SET Foto= @foto ";
             strsql += " WHERE ArtikelID = @ID";
 
             cmd.CommandText = strsql;
