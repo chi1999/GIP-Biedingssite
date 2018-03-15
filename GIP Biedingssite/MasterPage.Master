@@ -15,13 +15,6 @@
         </div>
         <p>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick" Orientation="Horizontal" Width="2000px">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/ArtikelenLeerlingen.aspx" Text="Artikelen leerlingen" Value="Artikelen leerlingen"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/ArtikelenLeerkracht.aspx" Text="Artikelen Leerkrachten" Value="Artikelen Leerkrachten"></asp:MenuItem>
-                    </Items>
-                </asp:Menu>
             </asp:ContentPlaceHolder>
         </p>
         
