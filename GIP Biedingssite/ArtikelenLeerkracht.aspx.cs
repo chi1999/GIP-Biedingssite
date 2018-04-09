@@ -44,12 +44,23 @@ namespace GIP_Biedingssite
             strtoevoegen = "INSERT INTO Artikel(Naam, Startprijs, Beschrijving, Startdatum, Einddatum, FotoNaam ) ";
             strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum, @foto)";
 
+            cmdToevoegen.CommandText = strtoevoegen;
 
             cmdToevoegen.Parameters.AddWithValue("@naam", txtNaam.Text);
             cmdToevoegen.Parameters.AddWithValue("@prijs", Convert.ToInt16(TxtPrijs.Text));
             cmdToevoegen.Parameters.AddWithValue("@beschrijving", txtBeschrijving.Text);
             cmdToevoegen.Parameters.AddWithValue("@Sdatum", Convert.ToDateTime(txtStartDatum.Text));
             cmdToevoegen.Parameters.AddWithValue("@Edatum", Convert.ToDateTime(txtEindDatum.Text));
+
+            OleDbCommand cmdArtikel = new OleDbCommand();
+            cmdArtikel.Connection = cnn;
+
+            cmdArtikel.CommandText = "SELECT TOP 1 ArtikelID FROM Artikel ORDER BY ArtikelID DESC";
+
+            cnn.Open();
+            Session["ArtikelID"] = cmdArtikel.ExecuteScalar();
+            cnn.Close();
+
             
             // Naam van het gekozen bestand en doelpad nieuwe foto
             string strBestandsnaam, strDoelpad, strNummer;
@@ -70,7 +81,7 @@ namespace GIP_Biedingssite
             cmd.Connection = cnn;
 
             string strsql;
-            strsql = "UPDATE tblArtikel SET Foto= @foto ";
+            strsql = "UPDATE Artikel SET Foto= @foto ";
             strsql += " WHERE ArtikelID = @ID";
 
             cmd.CommandText = strsql;

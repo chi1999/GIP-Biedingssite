@@ -14,6 +14,8 @@
                 <asp:BoundField DataField="Startdatum" HeaderText="Startdatum" SortExpression="Startdatum" />
                 <asp:BoundField DataField="Einddatum" HeaderText="Einddatum" SortExpression="Einddatum" />
                 <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" />
+                <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/fotos/{0}" HeaderText="Foto">
+                </asp:ImageField>
             </Fields>
         </asp:DetailsView>
         <asp:SqlDataSource ID="dtsArtikel" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Naam], [StartPrijs], [Beschrijving], [ArtikelID], [Startdatum], [Einddatum], [FotoNaam] FROM [Artikel]"></asp:SqlDataSource>

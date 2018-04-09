@@ -40,8 +40,10 @@ namespace GIP_Biedingssite
             }
             catch
             {
-                Server.Transfer("home.aspx");
+                Server.Transfer("Home.aspx");
             }
+
+            //
 
             if (!IsPostBack)
             {

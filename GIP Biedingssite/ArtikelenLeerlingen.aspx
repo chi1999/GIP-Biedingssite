@@ -10,6 +10,7 @@
             <asp:BoundField DataField="StartPrijs" DataFormatString="{0:c}" HeaderText="StartPrijs" SortExpression="StartPrijs" />
             <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" />
             <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/fotos/{0}" HeaderText="Foto">
+                <ControlStyle Width="80px" />
             </asp:ImageField>
         </Columns>
     <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
