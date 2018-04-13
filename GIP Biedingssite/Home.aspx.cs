@@ -114,7 +114,7 @@ namespace GIP_Biedingssite
         
             else
             {
-                lblNietJuist.Text = "u heeft een verkeerd paswoord ingegeven";
+                lblNietJuist.Text = "U heeft een verkeerd paswoord ingegeven";
             }
 
 
@@ -123,8 +123,6 @@ namespace GIP_Biedingssite
 
         }
 
-
-
-
+        
     }
     }

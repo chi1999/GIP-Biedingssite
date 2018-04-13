@@ -84,6 +84,7 @@
     </Content>
     <Content Include="Bieden.aspx" />
     <Content Include="Profiel.aspx" />
+    <Content Include="ExtraPagina.aspx" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="Profiel.aspx.designer.cs">
       <DependentUpon>Profiel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraPagina.aspx.cs">
+      <DependentUpon>ExtraPagina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExtraPagina.aspx.designer.cs">
+      <DependentUpon>ExtraPagina.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
