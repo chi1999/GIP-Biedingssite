@@ -25,5 +25,10 @@ namespace GIP_Biedingssite
             Session["ArtikelID"]= gdvArtikelenLeerling.SelectedRow.Cells[1].Text;
             Server.Transfer("Bieden.aspx");
         }
+
+        protected void dtsArtikelenLeerlingen_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }

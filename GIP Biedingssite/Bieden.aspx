@@ -5,7 +5,7 @@
     <asp:Label ID="lblArtikel" runat="server" Text="Artikel details:"></asp:Label>
     <asp:Panel ID="pnlGebruikers" runat="server">
         <br />
-        <asp:DetailsView ID="ddvArtikel" runat="server" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel" Height="50px" Width="125px">
+        <asp:DetailsView ID="ddvArtikel" runat="server" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel" Height="50px" Width="125px" OnPageIndexChanging="ddvArtikel_PageIndexChanging">
             <Fields>
                 <asp:BoundField DataField="Naam" HeaderText="Naam" SortExpression="Naam" />
                 <asp:BoundField DataField="StartPrijs" HeaderText="StartPrijs" SortExpression="StartPrijs" />
@@ -15,6 +15,7 @@
                 <asp:BoundField DataField="Einddatum" HeaderText="Einddatum" SortExpression="Einddatum" />
                 <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" />
                 <asp:ImageField DataImageUrlField="FotoNaam" DataImageUrlFormatString="~/fotos/{0}" HeaderText="Foto">
+                    <ControlStyle Width="75px" />
                 </asp:ImageField>
             </Fields>
         </asp:DetailsView>

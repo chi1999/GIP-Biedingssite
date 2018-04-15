@@ -186,5 +186,9 @@ namespace GIP_Biedingssite
 
         }
 
+        protected void ddvArtikel_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
 }

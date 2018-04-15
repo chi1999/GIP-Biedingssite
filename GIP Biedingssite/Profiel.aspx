@@ -14,8 +14,7 @@
     </asp:DetailsView>
     <asp:SqlDataSource ID="dtsGebruiker" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Voornaam], [Familienaam], [Email], [Type], [GebruikerID] FROM [Gebruiker]"></asp:SqlDataSource>
     <p>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-    </p>
+        &nbsp;</p>
     <asp:GridView ID="gdvBods" runat="server" AutoGenerateColumns="False" DataSourceID="dtsGeboden" OnSelectedIndexChanged="gdvBods_SelectedIndexChanged">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />

@@ -42,7 +42,7 @@ namespace GIP_Biedingssite
             string strtoevoegen;
 
             strtoevoegen = "INSERT INTO Artikel(Naam, Startprijs, Beschrijving, Startdatum, Einddatum, FotoNaam ) ";
-            strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum, @foto)";
+            strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum)";
 
             cmdToevoegen.CommandText = strtoevoegen;
 

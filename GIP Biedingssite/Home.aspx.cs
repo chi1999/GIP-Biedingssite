@@ -102,11 +102,8 @@ namespace GIP_Biedingssite
                 {
                     case "P":
                     case "B":
-                        Server.Transfer("ArtikelLeerkracht.aspx");
-                            break;
-
                     case "L":
-                        Server.Transfer("ArtikelLeerling");
+                        Server.Transfer("Menu.aspx");
                         break;
 
                 }
