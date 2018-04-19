@@ -98,15 +98,16 @@ namespace GIP_Biedingssite
 
             if (teller > 0)
             {
-                switch (Session["SoortGebr"].ToString())
-                {
-                    case "P":
-                    case "B":
-                    case "L":
-                        Server.Transfer("Menu.aspx");
-                        break;
+                Server.Transfer("Menu.aspx");
+                //switch (Session["SoortGebr"].ToString())
+                //{
+                //    case "P":
+                //    case "B":
+                //    case "L":
+                //        Server.Transfer("Menu.aspx");
+                //        break;
 
-                }
+                //}
             }
         
             else

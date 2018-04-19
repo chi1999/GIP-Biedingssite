@@ -21,21 +21,20 @@ namespace GIP_Biedingssite
             //Controleren als de gebruiker is aangemeld en welk type
             try
             {
-                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P" || Session["SoortGebr"].ToString() == "B")
+                switch (Session["SoortGebr"].ToString())
                 {
-                    if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
-                    {
-
+                    case "P":
+                    case "L":
                         pnlGebruikers.Visible = true;
+                        pnlBieden.Visible = true;
                         pnlBeheerder.Visible = false;
-
-                    }
-
-                    if (Session["SoortGebr"].ToString() == "B")
-                    {
+                        break;
+                    case "B":
                         pnlBeheerder.Visible = true;
+                        pnlBieden.Visible = true;
                         pnlGebruikers.Visible = false;
-                    }
+                        break;
+
                 }
             }
             catch
@@ -65,15 +64,7 @@ namespace GIP_Biedingssite
             }
             catch
             {
-                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
-                {
-                    Server.Transfer("ArtikelenLeerlingen.aspx");
-                }
-
-                if (Session["SoortGebr"].ToString() == "B")
-                {
-                    Server.Transfer("ArtikelenLeerkracht.aspx");
-                }
+                Server.Transfer("Menu.aspx");
             }
             
 
@@ -186,9 +177,5 @@ namespace GIP_Biedingssite
 
         }
 
-        protected void ddvArtikel_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-        {
-
-        }
     }
 }

@@ -2,13 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <asp:Panel ID="pnlKeuze0" runat="server">
-            <asp:Button ID="btnPnlInlog0" runat="server" Text="Inloggen" OnClick="btnPnlInlog_Click" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnPnlRegistr0" runat="server" Text="Registreren" OnClick="btnPnlRegistr_Click" />
-            <br />
-            <br />
-        </asp:Panel>
         <asp:Panel ID="pnlregistr" runat="server" Visible="False">
             <asp:label runat="server" AssociatedControlID="UserName" ID="UserNameLabel0">Naam:</asp:label>
             <asp:TextBox runat="server" ID="txtnaam"></asp:TextBox>

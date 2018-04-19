@@ -13,15 +13,6 @@ namespace GIP_Biedingssite {
     public partial class WebForm7 {
         
         /// <summary>
-        /// btnProfiel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnProfiel;
-        
-        /// <summary>
         /// btnArtikelenBekijken control.
         /// </summary>
         /// <remarks>
@@ -38,5 +29,23 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnArtikelenToevoegen;
+        
+        /// <summary>
+        /// btnProfiel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnProfiel;
+        
+        /// <summary>
+        /// btnAfmelden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAfmelden;
     }
 }

@@ -13,33 +13,6 @@ namespace GIP_Biedingssite {
     public partial class WebForm2 {
         
         /// <summary>
-        /// pnlKeuze0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlKeuze0;
-        
-        /// <summary>
-        /// btnPnlInlog0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPnlInlog0;
-        
-        /// <summary>
-        /// btnPnlRegistr0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPnlRegistr0;
-        
-        /// <summary>
         /// pnlregistr control.
         /// </summary>
         /// <remarks>
