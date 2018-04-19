@@ -24,7 +24,8 @@ namespace GIP_Biedingssite
         {
             pnlLogin.Visible = true;
             pnlregistr.Visible = false;
-        
+            btnPnlInlog.Visible = false;
+            btnPnlRegistr.Visible = true;
         }
 
         protected void btnPnlRegistr_Click(object sender, EventArgs e)
@@ -32,8 +33,8 @@ namespace GIP_Biedingssite
             pnlAkkoord.Visible = true;
             pnlLogin.Visible = false;
             pnlregistr.Visible = true;
-            btnPnlInlog0.Visible = false;
-            btnPnlRegistr0.Visible = false;
+            btnPnlInlog.Visible = false;
+            btnPnlRegistr.Visible = false;
             
         }
 
@@ -98,18 +99,18 @@ namespace GIP_Biedingssite
 
             if (teller > 0)
             {
-                Server.Transfer("Menu.aspx");
-                //switch (Session["SoortGebr"].ToString())
-                //{
-                //    case "P":
-                //    case "B":
-                //    case "L":
-                //        Server.Transfer("Menu.aspx");
-                //        break;
+                
+                switch (Session["SoortGebr"].ToString())
+                {
+                    case "P":
+                    case "B":
+                    case "L":
+                        Server.Transfer("Menu.aspx");
+                        break;
 
-                //}
+                }
             }
-        
+
             else
             {
                 lblNietJuist.Text = "U heeft een verkeerd paswoord ingegeven";
@@ -121,6 +122,5 @@ namespace GIP_Biedingssite
 
         }
 
-        
     }
     }

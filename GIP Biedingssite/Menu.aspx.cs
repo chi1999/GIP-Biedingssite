@@ -11,30 +11,32 @@ namespace GIP_Biedingssite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             try
             {
-                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P" || Session["SoortGebr"].ToString() == "B")
+                switch (Session["SoortGebr"].ToString())
                 {
-                    if (Session["SoortGebr"].ToString() == "B" || Session["SoortGebr"].ToString() == "P")
-                    {
-
+                    case "P":
+                    case "B":
                         btnArtikelenBekijken.Visible = true;
                         btnArtikelenToevoegen.Visible = true;
-
-                    }
-
-                    if (Session["SoortGebr"].ToString() == "L")
-                    {
+                        break;
+                    case "L":
                         btnArtikelenBekijken.Visible = true;
                         btnArtikelenToevoegen.Visible = false;
+                        break;
+                    default:
+                        Server.Transfer("Home.aspx");
+                        break;
 
-                    }
+
                 }
             }
             catch
             {
                 Server.Transfer("Home.aspx");
             }
+           
         }
 
         protected void btnArtikelenToevoegen_Click(object sender, EventArgs e)
@@ -50,6 +52,12 @@ namespace GIP_Biedingssite
         protected void btnProfiel_Click(object sender, EventArgs e)
         {
             Server.Transfer("Profiel.aspx");
+        }
+
+        protected void btnAfmelden_Click(object sender, EventArgs e)
+        {
+            Session["SoortGebr"] = "";
+            Session["gebruiker"] = "";
         }
     }
 }

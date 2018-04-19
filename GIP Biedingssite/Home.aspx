@@ -2,7 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Panel ID="pnlselectie" runat="server">
+                <asp:Button ID="btnPnlInlog" runat="server" Text="Inloggen" OnClick="btnPnlInlog_Click" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnPnlRegistr" runat="server" Text="registreren" OnClick="btnPnlRegistr_Click" />
+                <br />
+            </asp:Panel>
         <asp:Panel ID="pnlregistr" runat="server" Visible="False">
+            
             <asp:label runat="server" AssociatedControlID="UserName" ID="UserNameLabel0">Naam:</asp:label>
             <asp:TextBox runat="server" ID="txtnaam"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvNaam" runat="server" ControlToValidate="txtnaam" ErrorMessage="Verplicht veld!"></asp:RequiredFieldValidator>

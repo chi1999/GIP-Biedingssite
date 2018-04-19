@@ -13,33 +13,28 @@ namespace GIP_Biedingssite
         {
             if (!IsPostBack)
             {
-                //Session["SoortGebr"] = "L";
-                //Session["gebruiker"] = 2;
                 try
                 {
-                    if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
+                    switch (Session["SoortGebr"].ToString())
                     {
-
-                    }
-                    else
-                    {
-                        if (Session["SoortGebr"].ToString() == "B")
-                        {
-                            //Server.Transfer("Home.aspx");
-                        }
-                        else
-                        {
+                        case "P":
+                        case "L":
+                        case "B":
+                            break;
+                        default:
                             Server.Transfer("Home.aspx");
-                        }
+                            break;
+
                     }
                 }
                 catch
                 {
                     Server.Transfer("Home.aspx");
                 }
-                
-            
             }
+
+
+        
 
             dtsGebruiker.FilterExpression = "GebruikerID = " + Session["gebruiker"];
             dtvGebruiker.DataBind();

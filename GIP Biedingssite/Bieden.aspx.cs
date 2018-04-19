@@ -34,6 +34,9 @@ namespace GIP_Biedingssite
                         pnlBieden.Visible = true;
                         pnlGebruikers.Visible = false;
                         break;
+                    default:
+                        Server.Transfer("Home.aspx");
+                        break;
 
                 }
             }

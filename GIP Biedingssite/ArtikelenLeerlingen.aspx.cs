@@ -18,7 +18,26 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             gdvArtikelenLeerling.Visible = true;
+            try
+            {
+                switch (Session["SoortGebr"].ToString())
+                {
+                    case "P":
+                    case "L":
+                    case "B":
+                        break;
+                    default:
+                        Server.Transfer("Home.aspx");
+                        break;
+
+                }
+            }
+            catch
+            {
+                Server.Transfer("Home.aspx");
+            }
         }
+    
 
         protected void dgvArtikelenLeerling_SelectedIndexChanged(object sender, EventArgs e)
         {

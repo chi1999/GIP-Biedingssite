@@ -17,7 +17,25 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             PanelAddArtikel.Visible = false;
-         }
+            try
+            {
+                switch (Session["SoortGebr"].ToString())
+                {
+                    case "P":
+                    case "L":
+                    case "B":
+                        break;
+                    default:
+                        Server.Transfer("Home.aspx");
+                        break;
+
+                }
+            }
+            catch
+            {
+                Server.Transfer("Home.aspx");
+            }
+        }
 
         protected void gdvArtikelenLeerkrachten(object sender, EventArgs e)
         {

@@ -27,7 +27,7 @@
     <asp:Button ID="btnProfiel" runat="server" OnClick="btnProfiel_Click" Text="Profiel" />
             </td>
             <td>
-                <asp:Button ID="btnAfmelden" runat="server" Text="Afmelden" />
+                <asp:Button ID="btnAfmelden" runat="server" Text="Afmelden" OnClick="btnAfmelden_Click" />
             </td>
         </tr>
     </table>
