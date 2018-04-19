@@ -40,8 +40,10 @@ namespace GIP_Biedingssite
             }
             catch
             {
-                Server.Transfer("home.aspx");
+                Server.Transfer("Home.aspx");
             }
+
+            //
 
             if (!IsPostBack)
             {
@@ -184,5 +186,9 @@ namespace GIP_Biedingssite
 
         }
 
+        protected void ddvArtikel_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        {
+
+        }
     }
 }

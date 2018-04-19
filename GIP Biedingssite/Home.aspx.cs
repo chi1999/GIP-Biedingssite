@@ -82,33 +82,37 @@ namespace GIP_Biedingssite
             cmdLogin.Parameters.AddWithValue("@Gebruikersnaam", UserName.Text);
             
             cnn.Open();
-            int intOK;
+            int intID;
             OleDbDataReader drGebruiker = cmdLogin.ExecuteReader();
             int teller = 0;
             while (drGebruiker.Read())
             {
-                intOK = Convert.ToInt16(drGebruiker[0]);
+                intID = Convert.ToInt16(drGebruiker[0]);
                 string soortgebr = drGebruiker[1].ToString();
-                Session["gebruiker"] = intOK;
+                Session["gebruiker"] = intID;
                 Session["SoortGebr"] = soortgebr;
                 teller++;
             }
             
             cnn.Close();
-            
-                    if (teller > 0)
-                           {
-                    if (Session["SoortGebr"].ToString() == "P")
+
+            if (teller > 0)
+            {
+                switch (Session["SoortGebr"].ToString())
                 {
-                    Server.Transfer("ArtikelenLeerkracht.aspx");
+                    case "P":
+                    case "B":
+                    case "L":
+                        Server.Transfer("Menu.aspx");
+                        break;
+
                 }
-                Server.Transfer("ArtikelenLeerlingen.aspx");
-                UserNameLabel.Text = Session["SoortGebr"] + Session["gebruiker"].ToString();
-                            }
-                       else
-                {
-                lblNietJuist.Text = "u heeft een verkeerd paswoord ingegeven";
-                        }
+            }
+        
+            else
+            {
+                lblNietJuist.Text = "U heeft een verkeerd paswoord ingegeven";
+            }
 
 
 
@@ -116,8 +120,6 @@ namespace GIP_Biedingssite
 
         }
 
-
-
-
+        
     }
     }
