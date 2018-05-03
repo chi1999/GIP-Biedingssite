@@ -8,7 +8,7 @@
     <br />
         <br />
         <br />
-        <asp:Button ID="btnArtikelen" runat="server" Height="61px" OnClick="Button2_Click" Text="Artikelen" Width="105px" />
+        <asp:Button ID="btnArtikelen" runat="server" Height="61px" Text="Artikelen" Width="105px" />
         <br />
         <br />
         <br />
