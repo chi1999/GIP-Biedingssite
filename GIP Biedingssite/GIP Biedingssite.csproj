@@ -76,19 +76,15 @@
     <Content Include="fotos\Pennenzak.jpg" />
     <Content Include="fotos\Rekenmachine.jpg" />
     <Content Include="fotos\Sportkledij.jpg" />
-    <Content Include="packages.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
-    <Content Include="LoginEnRegistreren.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="ArtikelenLeerlingen.aspx">
       <BrowseToURL>~/ArtikelenLeerlingen.aspx</BrowseToURL>
     </Content>
     <Content Include="Bieden.aspx" />
     <Content Include="Profiel.aspx" />
-    <Content Include="Artikelen.aspx" />
-    <Content Include="BeheerArtikelen.aspx" />
-    <Content Include="Home.aspx" />
+    <Content Include="Menu.aspx" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -120,12 +116,12 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LoginEnRegistreren.aspx.cs">
-      <DependentUpon>LoginEnRegistreren.aspx</DependentUpon>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LoginEnRegistreren.aspx.designer.cs">
-      <DependentUpon>LoginEnRegistreren.aspx</DependentUpon>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="ArtikelenLeerlingen.aspx.cs">
       <DependentUpon>ArtikelenLeerlingen.aspx</DependentUpon>
@@ -155,26 +151,12 @@
     <Compile Include="Profiel.aspx.designer.cs">
       <DependentUpon>Profiel.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Artikelen.aspx.cs">
-      <DependentUpon>Artikelen.aspx</DependentUpon>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Artikelen.aspx.designer.cs">
-      <DependentUpon>Artikelen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BeheerArtikelen.aspx.cs">
-      <DependentUpon>BeheerArtikelen.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BeheerArtikelen.aspx.designer.cs">
-      <DependentUpon>BeheerArtikelen.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

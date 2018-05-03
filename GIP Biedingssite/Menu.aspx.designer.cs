@@ -10,51 +10,42 @@
 namespace GIP_Biedingssite {
     
     
-    public partial class WebForm6 {
+    public partial class WebForm7 {
         
         /// <summary>
-        /// lblGebruiker control.
+        /// btnArtikelenBekijken control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGebruiker;
+        protected global::System.Web.UI.WebControls.Button btnArtikelenBekijken;
         
         /// <summary>
-        /// dtvGebruiker control.
+        /// btnArtikelenToevoegen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView dtvGebruiker;
+        protected global::System.Web.UI.WebControls.Button btnArtikelenToevoegen;
         
         /// <summary>
-        /// dtsGebruiker control.
+        /// btnProfiel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtsGebruiker;
+        protected global::System.Web.UI.WebControls.Button btnProfiel;
         
         /// <summary>
-        /// gdvBods control.
+        /// btnAfmelden control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdvBods;
-        
-        /// <summary>
-        /// dtsGeboden control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtsGeboden;
+        protected global::System.Web.UI.WebControls.Button btnAfmelden;
     }
 }
