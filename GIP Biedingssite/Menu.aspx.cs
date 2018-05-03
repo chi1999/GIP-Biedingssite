@@ -17,9 +17,13 @@ namespace GIP_Biedingssite
                 switch (Session["SoortGebr"].ToString())
                 {
                     case "P":
+                        btnArtikelenBekijken.Visible = true;
+                        btnArtikelenToevoegen.Visible = true;
+                        break;
                     case "B":
                         btnArtikelenBekijken.Visible = true;
                         btnArtikelenToevoegen.Visible = true;
+                        btnBiedenBeheren.Visible = true;
                         break;
                     case "L":
                         btnArtikelenBekijken.Visible = true;
@@ -59,6 +63,11 @@ namespace GIP_Biedingssite
             Session["SoortGebr"] = "";
             Session["gebruiker"] = "";
             Server.Transfer("home.aspx");
+        }
+
+        protected void btnBiedenBeheren_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("BiedenBeheren.aspx");
         }
     }
 }

@@ -26,6 +26,9 @@
             <td class="auto-style4">
     <asp:Button ID="btnProfiel" runat="server" OnClick="btnProfiel_Click" Text="Profiel" />
             </td>
+            <td class="auto-style4">
+                <asp:Button ID="btnBiedenBeheren" runat="server" OnClick="btnBiedenBeheren_Click" Text="Biedingen beheren" Visible="False" />
+            </td>
             <td>
                 <asp:Button ID="btnAfmelden" runat="server" Text="Afmelden" OnClick="btnAfmelden_Click" />
             </td>

@@ -10,51 +10,69 @@
 namespace GIP_Biedingssite {
     
     
-    public partial class WebForm7 {
+    public partial class WebForm8 {
         
         /// <summary>
-        /// btnArtikelenBekijken control.
+        /// pnlBeheerder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnArtikelenBekijken;
+        protected global::System.Web.UI.WebControls.Panel pnlBeheerder;
         
         /// <summary>
-        /// btnArtikelenToevoegen control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnArtikelenToevoegen;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// btnProfiel control.
+        /// ddvArtikel0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnProfiel;
+        protected global::System.Web.UI.WebControls.DetailsView ddvArtikel0;
         
         /// <summary>
-        /// btnBiedenBeheren control.
+        /// dtsArtikel0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBiedenBeheren;
+        protected global::System.Web.UI.WebControls.SqlDataSource dtsArtikel0;
         
         /// <summary>
-        /// btnAfmelden control.
+        /// lblbeheerder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAfmelden;
+        protected global::System.Web.UI.WebControls.Label lblbeheerder;
+        
+        /// <summary>
+        /// gdvbeheerder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gdvbeheerder;
+        
+        /// <summary>
+        /// dtsbeheerder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dtsbeheerder;
     }
 }

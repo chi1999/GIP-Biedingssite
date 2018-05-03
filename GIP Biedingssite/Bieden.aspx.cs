@@ -25,12 +25,7 @@ namespace GIP_Biedingssite
                 {
                     case "P":
                     case "L":
-                        pnlGebruikers.Visible = true;
-                        pnlBieden.Visible = true;
-                        pnlBeheerder.Visible = false;
-                        break;
                     case "B":
-                        pnlBeheerder.Visible = true;
                         pnlBieden.Visible = true;
                         pnlGebruikers.Visible = false;
                         break;
@@ -61,9 +56,7 @@ namespace GIP_Biedingssite
                 dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
                 gdvGebruiker.DataBind();
 
-                dtsbeheerder.FilterExpression = "ArtikelID =" + Session["ArtikelID"];
-                gdvbeheerder.DataBind();
-
+                
             }
             catch
             {
@@ -163,8 +156,7 @@ namespace GIP_Biedingssite
 
                     dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
                     gdvGebruiker.DataBind();
-                    dtsbeheerder.FilterExpression = "ArtikelID =" + Session["ArtikelID"];
-                    gdvbeheerder.DataBind();
+                   
 
 
                 }
@@ -183,5 +175,9 @@ namespace GIP_Biedingssite
 
         }
 
+        protected void btnReturn_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("ArtikelenLeerlingen.aspx");
+        }
     }
 }
