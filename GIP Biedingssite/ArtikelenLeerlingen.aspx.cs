@@ -41,7 +41,7 @@ namespace GIP_Biedingssite
 
         protected void dgvArtikelenLeerling_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Session["ArtikelID"]= gdvArtikelenLeerling.SelectedRow.Cells[1].Text;
+            Session["ArtikelID"]= gdvArtikelenLeerling.SelectedRow.Cells[0].Text;
             Server.Transfer("Bieden.aspx");
         }
 
