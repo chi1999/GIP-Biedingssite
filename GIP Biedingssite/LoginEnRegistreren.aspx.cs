@@ -24,8 +24,7 @@ namespace GIP_Biedingssite
         {
             pnlLogin.Visible = true;
             pnlregistr.Visible = false;
-            btnPnlInlog.Visible = false;
-            btnPnlRegistr.Visible = true;
+        
         }
 
         protected void btnPnlRegistr_Click(object sender, EventArgs e)
@@ -33,8 +32,8 @@ namespace GIP_Biedingssite
             pnlAkkoord.Visible = true;
             pnlLogin.Visible = false;
             pnlregistr.Visible = true;
-            btnPnlInlog.Visible = false;
-            btnPnlRegistr.Visible = false;
+            btnPnlInlog0.Visible = false;
+            btnPnlRegistr0.Visible = false;
             
         }
 
@@ -66,7 +65,7 @@ namespace GIP_Biedingssite
 
             cnn.Close();
             pnlLogin.Visible = true;
-            UserName.Text = txtemail.Text;
+            UserName.Text = txtnaam.Text;
             pnlregistr.Visible = false;
         }
 
@@ -83,39 +82,42 @@ namespace GIP_Biedingssite
             cmdLogin.Parameters.AddWithValue("@Gebruikersnaam", UserName.Text);
             
             cnn.Open();
-            int intID;
+            int intOK;
             OleDbDataReader drGebruiker = cmdLogin.ExecuteReader();
             int teller = 0;
             while (drGebruiker.Read())
             {
-                intID = Convert.ToInt16(drGebruiker[0]);
+                intOK = Convert.ToInt16(drGebruiker[0]);
                 string soortgebr = drGebruiker[1].ToString();
-                Session["gebruiker"] = intID;
+                Session["gebruiker"] = intOK;
                 Session["SoortGebr"] = soortgebr;
                 teller++;
             }
             
             cnn.Close();
-
-            if (teller > 0)
-            {
-                
-                switch (Session["SoortGebr"].ToString())
+            
+                    if (teller > 0)
+                           {
+                    if (Session["SoortGebr"].ToString() == "P")
                 {
-                    case "P":
-                    case "B":
-                    case "L":
-                        Server.Transfer("Menu.aspx");
-                        break;
-
+                    Server.Transfer("Home.aspx");
                 }
-            }
+                Server.Transfer("Home.aspx");
+                UserNameLabel.Text = Session["SoortGebr"] + Session["gebruiker"].ToString();
+                            }
+                       else
+                {
+                lblNietJuist.Text = "u heeft een verkeerd paswoord ingegeven";
+                        }
 
-            else
-            {
-                lblNietJuist.Text = "U heeft een verkeerd paswoord ingegeven";
-            }
+
+
+
+
         }
+
+
+
 
     }
     }
