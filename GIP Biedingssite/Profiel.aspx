@@ -13,7 +13,9 @@
         </Fields>
     </asp:DetailsView>
     <asp:SqlDataSource ID="dtsGebruiker" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [Voornaam], [Familienaam], [Email], [Type], [GebruikerID] FROM [Gebruiker]"></asp:SqlDataSource>
-    
+    <p>
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    </p>
     <asp:GridView ID="gdvBods" runat="server" AutoGenerateColumns="False" DataSourceID="dtsGeboden" OnSelectedIndexChanged="gdvBods_SelectedIndexChanged">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
@@ -29,5 +31,5 @@
             <asp:BoundField DataField="FotoNaam" HeaderText="FotoNaam" SortExpression="FotoNaam" />
         </Columns>
     </asp:GridView>
-    <asp:SqlDataSource ID="dtsGeboden" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Artikel.Naam, Artikel.Beschrijving, Artikel.Startdatum, Artikel.Einddatum, Bod.Bod, Bod.Moment, Artikel.StartPrijs, Artikel.FotoNaam, Bod.GebruikerID, Bod.ArtikelID FROM Bod, Artikel WHERE Bod.ArtikelID = Artikel.ArtikelID"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="dtsGeboden" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT Artikel.Naam, Artikel.Beschrijving, Artikel.Startdatum, Artikel.Einddatum, Bod.Bod, Bod.Moment, Artikel.StartPrijs, Artikel.FotoNaam, Bod.GebruikerID, Bod.ArtikelID FROM Bod, Artikel WHERE Bod.ArtikelID = Artikel.ArtikelID ORDER BY Bod.Bod DESC"></asp:SqlDataSource>
 </asp:Content>

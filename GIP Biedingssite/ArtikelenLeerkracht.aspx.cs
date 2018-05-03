@@ -21,8 +21,10 @@ namespace GIP_Biedingssite
 
         protected void gdvArtikelenLeerkrachten(object sender, EventArgs e)
         {
-            Session["ArtikelID"] = gdvArtikelenLeerkracht.SelectedRow.Cells[1];
-            
+            Session["ArtikelID"] = gdvArtikelenLeerkracht.SelectedRow.Cells[1].Text;
+
+            Server.Transfer("Bieden.aspx");
+
 
         }
         protected void btnToevoegen_Click(object sender, EventArgs e)
@@ -30,26 +32,62 @@ namespace GIP_Biedingssite
 
             PanelAddArtikel.Visible = true;
 
+        }
+
+        protected void btnVerzenden_Click(object sender, EventArgs e)
+        {
             OleDbCommand cmdToevoegen = new OleDbCommand();
             cmdToevoegen.Connection = cnn;
 
-            cmdToevoegen.CommandText = "INSERT INTO Artikel(ArtikelID, Naam, StartPrijs, Beschrijving, Startdatum, Einddatum, FotoNaam) " +
-                "VALUES(@ID, @naam, @prijs, @beschrijving, @Sdatum, @Edatum, @foto)";
+            string strtoevoegen;
 
-            cmdToevoegen.Parameters.AddWithValue("@ID", txtArtikelID.Text);
+            strtoevoegen = "INSERT INTO Artikel(Naam, Startprijs, Beschrijving, Startdatum, Einddatum, FotoNaam ) ";
+            strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum, @foto)";
+
+
             cmdToevoegen.Parameters.AddWithValue("@naam", txtNaam.Text);
-            cmdToevoegen.Parameters.AddWithValue("@prijs", TxtPrijs.Text);
+            cmdToevoegen.Parameters.AddWithValue("@prijs", Convert.ToInt16(TxtPrijs.Text));
             cmdToevoegen.Parameters.AddWithValue("@beschrijving", txtBeschrijving.Text);
-            cmdToevoegen.Parameters.AddWithValue("@Sdatum", txtStartDatum.Text);
-            cmdToevoegen.Parameters.AddWithValue("@Edatum", txtEindDatum.Text);
-            cmdToevoegen.Parameters.AddWithValue("@foto", txtFoto.Text);
+            cmdToevoegen.Parameters.AddWithValue("@Sdatum", Convert.ToDateTime(txtStartDatum.Text));
+            cmdToevoegen.Parameters.AddWithValue("@Edatum", Convert.ToDateTime(txtEindDatum.Text));
+            
+            // Naam van het gekozen bestand en doelpad nieuwe foto
+            string strBestandsnaam, strDoelpad, strNummer;
+
+            strBestandsnaam = System.IO.Path.GetFileName(fileupFoto.PostedFile.FileName);
+            strDoelpad = Server.MapPath("fotos" + @"\" + strBestandsnaam);
+
+            //Bestand opslaan in map op de internetserver
+
+            fileupFoto.PostedFile.SaveAs(strDoelpad);
+
+            //Ophalen sleutel
+            strNummer = Session["ArtikelID"].ToString();
+
+            //Bijwerken record via connected toegang
+
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.Connection = cnn;
+
+            string strsql;
+            strsql = "UPDATE tblArtikel SET Foto= @foto ";
+            strsql += " WHERE ArtikelID = @ID";
+
+            cmd.CommandText = strsql;
+            cmd.Parameters.AddWithValue("@foto", strBestandsnaam);
+            cmd.Parameters.AddWithValue("@ID", strNummer);
 
             cnn.Open();
-
-            cmdToevoegen.ExecuteNonQuery();
-
+            cmd.ExecuteNonQuery();
             cnn.Close();
 
+            //Terug naar vorige webpagina
+            Server.Transfer("ArtikelenLeerkracht.aspx");
+
+            cmdToevoegen.CommandText = strtoevoegen;
+            cnn.Open();
+            cmdToevoegen.ExecuteNonQuery();
+            cnn.Close();
         }
     }
 }

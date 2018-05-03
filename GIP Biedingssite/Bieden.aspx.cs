@@ -18,43 +18,64 @@ namespace GIP_Biedingssite
         public static OleDbConnection cnn = new OleDbConnection(strconnectie);
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["SoortGebr"] = "L";
-            
-            if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
+            //Controleren als de gebruiker is aangemeld en welk type
+            try
             {
-
-                pnlGebruikers.Visible = true;
-                pnlBeheerder.Visible = false;
-
-                if (Session["SoortGebr"].ToString() == "B")
+                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P" || Session["SoortGebr"].ToString() == "B")
                 {
-                    pnlBeheerder.Visible = true;
-                    pnlGebruikers.Visible = false;
-                }
-                else
-                {
-                    Server.Transfer("Home.aspx");
-                }
+                    if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
+                    {
 
+                        pnlGebruikers.Visible = true;
+                        pnlBeheerder.Visible = false;
+
+                    }
+
+                    if (Session["SoortGebr"].ToString() == "B")
+                    {
+                        pnlBeheerder.Visible = true;
+                        pnlGebruikers.Visible = false;
+                    }
+                }
+            }
+            catch
+            {
+                Server.Transfer("home.aspx");
             }
 
             if (!IsPostBack)
             {
-
                 lblMelding.Visible = false;
             }
 
-            //Session["gebruiker"] = 2;
-            //Session["ArtikelID"] = 1;
+            //Filteren van de detailsviews
+            try
+            {
+                dtsArtikel.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
+                ddvArtikel.DataBind();
 
-            dtsArtikel.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
-            ddvArtikel.DataBind();
+                dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
+                gdvGebruiker.DataBind();
 
-            dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
-            gdvGebruiker.DataBind();
+                dtsbeheerder.FilterExpression = "ArtikelID =" + Session["ArtikelID"];
+                gdvbeheerder.DataBind();
 
-            dtsbeheerder.FilterExpression = "ArtikelID =" + Session["ArtikelID"];
-            gdvbeheerder.DataBind();
+            }
+            catch
+            {
+                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
+                {
+                    Server.Transfer("ArtikelenLeerlingen.aspx");
+                }
+
+                if (Session["SoortGebr"].ToString() == "B")
+                {
+                    Server.Transfer("ArtikelenLeerkracht.aspx");
+                }
+            }
+            
+
+            //opvragen van de startprijs en einddatum voor controle te kunnen uitvoeren bij het bod plaatsen
 
             OleDbCommand cmdStartprijs = new OleDbCommand();
             cmdStartprijs.Connection = cnn;
@@ -70,8 +91,9 @@ namespace GIP_Biedingssite
             Session["Einddatum"] = Convert.ToDateTime(drGegevens[1]);
             }
 
-            //lblArtikel.Text = Session["Startprijs"].ToString();
             cnn.Close();
+            
+            //Het hoogste bod opvragen van het artikel voor te controleren bij het plaatsten van een bod
 
             OleDbCommand cmdhoogste = new OleDbCommand();
             cmdhoogste.Connection = cnn;
@@ -84,12 +106,13 @@ namespace GIP_Biedingssite
             Session["HBod"] = cmdhoogste.ExecuteScalar();
 
             cnn.Close();
+
             if (Convert.ToInt16(Session["HBod"]) <= 0)
             {
                 Session["HBod"] = 0;
             }
 
-           
+           //Bieden onmogelijk maken als de einddatum is bereikt
             if (Convert.ToDateTime(Session["Einddatum"]) < DateTime.Today)
             {
                 pnlBieden.Visible = false;
@@ -101,18 +124,20 @@ namespace GIP_Biedingssite
                 pnlBieden.Visible = true;
                 lblFout.Visible = false;
             }
-
-
+            
         }
         protected void Bieden(object sender, EventArgs e)
         {
+
             int intbod = Convert.ToInt16(txtBod.Text);
 
+            //ophalen van het ipadres van de gebruiker
             string strHostName = System.Net.Dns.GetHostName();
             IPHostEntry ipEntry = System.Net.Dns.GetHostEntry(strHostName);
             IPAddress[] addr = ipEntry.AddressList;
             string myIP = addr[addr.Length - 2].ToString();
 
+            //Plaatsen van het bod als het bedrag hoger is dan het hoogste bod en de startprijs
             if (intbod > Convert.ToInt32(Session["HBod"].ToString()))
             {
                 if (intbod > Convert.ToInt32(Session["Startprijs"].ToString()))
@@ -139,6 +164,10 @@ namespace GIP_Biedingssite
 
                     lblMelding.Visible = true;
                     lblMelding.Text = "Uw bod is geplaatst op " + DateTime.Today.Date;
+                    dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
+                    gdvGebruiker.DataBind();
+                    
+
                 }
                 else
                 {
@@ -155,9 +184,5 @@ namespace GIP_Biedingssite
 
         }
 
-        protected void dtsArtikel_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
-        }
     }
 }
