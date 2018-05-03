@@ -10,7 +10,7 @@ using System.Data.OleDb;
 
 namespace GIP_Biedingssite
 {
-    public partial class Home : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
         public static string strconnectie = ConfigurationManager.ConnectionStrings["gip"].ConnectionString;
         public static OleDbConnection cnn = new OleDbConnection(strconnectie);
@@ -115,11 +115,6 @@ namespace GIP_Biedingssite
             {
                 lblNietJuist.Text = "U heeft een verkeerd paswoord ingegeven";
             }
-
-
-
-
-
         }
 
     }

@@ -59,7 +59,6 @@ namespace GIP_Biedingssite
             Session["SoortGebr"] = "";
             Session["gebruiker"] = "";
             Server.Transfer("home.aspx");
-
         }
     }
 }

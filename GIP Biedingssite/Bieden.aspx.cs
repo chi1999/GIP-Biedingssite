@@ -160,9 +160,12 @@ namespace GIP_Biedingssite
 
                     lblMelding.Visible = true;
                     lblMelding.Text = "Uw bod is geplaatst op " + DateTime.Today.Date;
+
                     dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
                     gdvGebruiker.DataBind();
-                    
+                    dtsbeheerder.FilterExpression = "ArtikelID =" + Session["ArtikelID"];
+                    gdvbeheerder.DataBind();
+
 
                 }
                 else
