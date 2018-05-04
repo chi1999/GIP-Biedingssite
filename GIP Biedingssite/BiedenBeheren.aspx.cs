@@ -11,11 +11,22 @@ namespace GIP_Biedingssite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["SoortGebr"] == null)
+            {
+                Server.Transfer("Home.aspx");
+            }
 
+            if (!IsPostBack)
+            {
+                Session["ArtikelID"] = ddvArtikel0.PageIndex - 1;
+                dtsbeheerder.FilterExpression = "ArtikelID = " + Session["ArtikelID"];
+                gdvbeheerder.DataBind();
+            }
         }
 
         protected void ddvArtikel0_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
         {
+            Session["ArtikelID"] = ddvArtikel0.PageIndex - 1;
             dtsbeheerder.FilterExpression = "ArtikelID = " + Session["ArtikelID"];
             gdvbeheerder.DataBind();
         }
