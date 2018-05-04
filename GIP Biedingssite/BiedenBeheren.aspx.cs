@@ -16,8 +16,13 @@ namespace GIP_Biedingssite
 
         protected void ddvArtikel0_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
         {
-            dtsbeheerder.FilterExpression = "ArtikelID =" + Session["ArtikelID"];
+            dtsbeheerder.FilterExpression = "ArtikelID = " + Session["ArtikelID"];
             gdvbeheerder.DataBind();
+        }
+
+        protected void gdvbeheerder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

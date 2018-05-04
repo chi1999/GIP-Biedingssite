@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="pnlBeheerder" runat="server">
-        <asp:TextBox ID="TextBox1" runat="server">Artikelen:</asp:TextBox>
+        <asp:Label ID="lblArtikelen" runat="server" Text="Artikelen:"></asp:Label>
         <br />
         <asp:DetailsView ID="ddvArtikel0" runat="server" AutoGenerateRows="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikel0" Height="50px" Width="125px" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" AllowPaging="True" OnPageIndexChanging="ddvArtikel0_PageIndexChanging">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
@@ -47,7 +47,7 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <asp:Label ID="lblbeheerder" runat="server" Text="Geboden gebruikers:"></asp:Label>
-        <asp:GridView ID="gdvbeheerder" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="dtsbeheerder" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
+        <asp:GridView ID="gdvbeheerder" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="dtsbeheerder" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" OnSelectedIndexChanged="gdvbeheerder_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <Columns>
                 <asp:BoundField DataField="BodID" HeaderText="BodID" InsertVisible="False" SortExpression="BodID" Visible="False" />
