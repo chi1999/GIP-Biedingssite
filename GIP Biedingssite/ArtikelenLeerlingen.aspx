@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Button ID="btnMenu" runat="server" OnClick="btnMenu_Click" Text="Menu" />
     <asp:GridView ID="gdvArtikelenLeerling" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikelenLeerlingen" BackColor="White" BorderColor="#3366CC" BorderStyle="Solid" BorderWidth="1px" CellPadding="4" Height="10px" Width="381px" OnSelectedIndexChanged="dgvArtikelenLeerling_SelectedIndexChanged">
         <Columns>
             <asp:CommandField ShowSelectButton="True" />

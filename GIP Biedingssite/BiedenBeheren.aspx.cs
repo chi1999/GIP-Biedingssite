@@ -18,22 +18,30 @@ namespace GIP_Biedingssite
 
             if (!IsPostBack)
             {
-                Session["ArtikelID"] = ddvArtikel0.PageIndex - 1;
+                Session["ArtikelID"] = 1;
                 dtsbeheerder.FilterExpression = "ArtikelID = " + Session["ArtikelID"];
                 gdvbeheerder.DataBind();
             }
         }
 
-        protected void ddvArtikel0_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+        protected void indexchanged(object sender, DetailsViewPageEventArgs e)
         {
-            Session["ArtikelID"] = ddvArtikel0.PageIndex - 1;
-            dtsbeheerder.FilterExpression = "ArtikelID = " + Session["ArtikelID"];
-            gdvbeheerder.DataBind();
         }
 
         protected void gdvbeheerder_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
 
+        protected void btnReturn_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Menu.aspx");
+        }
+
+        protected void indexchanged(object sender, EventArgs e)
+        {
+            Session["ArtikelID"] = Convert.ToInt32(gdvArtikels.SelectedRow.Cells[1].Text);
+            dtsbeheerder.FilterExpression = "ArtikelID = " + Session["ArtikelID"];
+            gdvbeheerder.DataBind();
         }
     }
 }
