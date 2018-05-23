@@ -5,7 +5,7 @@
     <asp:Panel ID="pnlselectie" runat="server">
                 <asp:Button ID="btnPnlInlog" runat="server" Text="Inloggen" OnClick="btnPnlInlog_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnPnlRegistr" runat="server" Text="registreren" OnClick="btnPnlRegistr_Click" />
+                <asp:Button ID="btnPnlRegistr" runat="server" Text="Registreren" OnClick="btnPnlRegistr_Click" />
                 <br />
             </asp:Panel>
         <asp:Panel ID="pnlregistr" runat="server" Visible="False">
@@ -39,7 +39,7 @@
             <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtemail" ErrorMessage="Het veld is niet herkend als email adres" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             <br />
             <br /><asp:Panel ID="pnlAkkoord" runat="server" Visible="False" BackColor="#CCCCFF" Font-Bold="False" Font-Italic="False" Font-Size="Medium">
-                Beste gebruiker<br /> Welkom op onze biedingssite hier worden allerlei school producten verkocht aan de hoogste bieder. Om dit van een leiendakje te laten lopen en ervoor te zorgen dat er geen misbruik wordt gemaakt van de website zijn er natuurlijk enkele regels waarmee je je akkoord moet verklaren.<br /> Regel 1: Je moet je echte naam gebruiken en je e-mail adres die j evan het school hebt gekregen.<br /> Regel 2: Er mogen geen valse bedragen geboden worden, als je bied moet je betalen!
+                Beste gebruiker<br /> Welkom op onze biedingssite hier worden allerlei school producten verkocht aan de hoogste bieder. Om dit van een leiendakje te laten lopen en ervoor te zorgen dat er geen misbruik wordt gemaakt van de website zijn er natuurlijk enkele regels waarmee je je akkoord moet verklaren.<br /> Regel 1: Je moet je echte naam gebruiken en je e-mail adres die je van het school hebt gekregen.<br /> Regel 2: Er mogen geen valse bedragen geboden worden, als je bied moet je betalen!
                 <br />
                 Regel 3: Er kan geen bod geplaats worden die lager is dan het mininumbedrag.<br /> Regel 4: In het geval dat een gebruiker misbruik maakt van de biedingsite zal de beheerder de gebruiker in kwestie blokkeren.<br /> We danken u bij voorbaat om akkoord te gaan en het reglement na te leven.
                 <br />
@@ -65,7 +65,7 @@
           
             <br />
             <br />
-            <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" Width="53px" OnClick="LoginButton_Click" />
+            <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" Width="53px" OnClick="LoginButton_Click" Height="26px" />
             <asp:Label ID="lblNietJuist" runat="server"></asp:Label>
         </asp:Panel> 
         

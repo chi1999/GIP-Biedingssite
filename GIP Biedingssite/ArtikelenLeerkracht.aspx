@@ -55,7 +55,7 @@
         Startdatum:<asp:TextBox ID="txtStartDatum" runat="server" TextMode="DateTime"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvSdatum" runat="server" ErrorMessage="Gelieve een startdatum toe te voegen" ControlToValidate="txtStartDatum"></asp:RequiredFieldValidator>
         <br />
-        Einddatum:<asp:TextBox ID="txtEindDatum" runat="server" TextMode="Date"></asp:TextBox>
+        Einddatum:<asp:TextBox ID="txtEindDatum" runat="server" TextMode="DateTime"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvEdatum" runat="server" ErrorMessage="Gelieve een einddatum toe te voegen" ControlToValidate="txtEindDatum"></asp:RequiredFieldValidator>
         <br />
         FotoNaam:<asp:FileUpload ID="fileupFoto" runat="server" />

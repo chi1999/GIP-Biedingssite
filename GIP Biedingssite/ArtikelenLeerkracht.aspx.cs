@@ -17,24 +17,9 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             PanelAddArtikel.Visible = false;
-            try
-            {
-                switch (Session["SoortGebr"].ToString())
-                {
-                    case "P":
-                    case "L":
-                    case "B":
-                        break;
-                    default:
-                        Server.Transfer("Home.aspx");
-                        break;
-
-                }
-            }
-            catch
-            {
-                Server.Transfer("Home.aspx");
-            }
+            if (Session["SoortGebr"]==null)
+            { Server.Transfer("Home.aspx"); }
+         
         }
 
         protected void gdvArtikelenLeerkrachten(object sender, EventArgs e)
@@ -59,8 +44,8 @@ namespace GIP_Biedingssite
 
             string strtoevoegen;
 
-            strtoevoegen = "INSERT INTO Artikel(Naam, Startprijs, Beschrijving, Startdatum, Einddatum, FotoNaam ) ";
-            strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum)";
+            strtoevoegen = "INSERT INTO Artikel(Naam, Startprijs, Beschrijving, Startdatum, Einddatum ,GebruikerID) ";
+            strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum, @gebruikerID)";
 
             cmdToevoegen.CommandText = strtoevoegen;
 
@@ -69,6 +54,10 @@ namespace GIP_Biedingssite
             cmdToevoegen.Parameters.AddWithValue("@beschrijving", txtBeschrijving.Text);
             cmdToevoegen.Parameters.AddWithValue("@Sdatum", Convert.ToDateTime(txtStartDatum.Text));
             cmdToevoegen.Parameters.AddWithValue("@Edatum", Convert.ToDateTime(txtEindDatum.Text));
+            cmdToevoegen.Parameters.AddWithValue("@gebruikerID", Session["gebruiker"].ToString());
+            cnn.Open();
+            cmdToevoegen.ExecuteNonQuery();
+            cnn.Close();
 
             OleDbCommand cmdArtikel = new OleDbCommand();
             cmdArtikel.Connection = cnn;
@@ -99,7 +88,7 @@ namespace GIP_Biedingssite
             cmd.Connection = cnn;
 
             string strsql;
-            strsql = "UPDATE Artikel SET Foto= @foto ";
+            strsql = "UPDATE Artikel SET Fotonaam= @foto ";
             strsql += " WHERE ArtikelID = @ID";
 
             cmd.CommandText = strsql;
