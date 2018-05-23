@@ -10,33 +10,51 @@
 namespace GIP_Biedingssite {
     
     
-    public partial class WebForm3 {
+    public partial class WebForm7 {
         
         /// <summary>
-        /// btnMenu control.
+        /// btnArtikelenBekijken control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMenu;
+        protected global::System.Web.UI.WebControls.Button btnArtikelenBekijken;
         
         /// <summary>
-        /// gdvArtikelenLeerling control.
+        /// btnArtikelenToevoegen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdvArtikelenLeerling;
+        protected global::System.Web.UI.WebControls.Button btnArtikelenToevoegen;
         
         /// <summary>
-        /// dtsArtikelenLeerlingen control.
+        /// btnProfiel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtsArtikelenLeerlingen;
+        protected global::System.Web.UI.WebControls.Button btnProfiel;
+        
+        /// <summary>
+        /// btnBiedenBeheren control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBiedenBeheren;
+        
+        /// <summary>
+        /// btnAfmelden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAfmelden;
     }
 }

@@ -84,6 +84,8 @@
     </Content>
     <Content Include="Bieden.aspx" />
     <Content Include="Profiel.aspx" />
+    <Content Include="Menu.aspx" />
+    <Content Include="BiedenBeheren.aspx" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -149,6 +151,20 @@
     </Compile>
     <Compile Include="Profiel.aspx.designer.cs">
       <DependentUpon>Profiel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BiedenBeheren.aspx.cs">
+      <DependentUpon>BiedenBeheren.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BiedenBeheren.aspx.designer.cs">
+      <DependentUpon>BiedenBeheren.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

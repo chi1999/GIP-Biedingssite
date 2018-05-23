@@ -18,12 +18,29 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             gdvArtikelenLeerling.Visible = true;
+
+            if (Session["SoortGebr"] == null)
+            {
+                Server.Transfer("Home.aspx");
+            }
+           
         }
+    
 
         protected void dgvArtikelenLeerling_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session["ArtikelID"]= gdvArtikelenLeerling.SelectedRow.Cells[1].Text;
             Server.Transfer("Bieden.aspx");
+        }
+
+        protected void dtsArtikelenLeerlingen_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void btnMenu_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Menu.aspx");
         }
     }
 }

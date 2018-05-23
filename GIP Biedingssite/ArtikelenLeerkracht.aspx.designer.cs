@@ -13,6 +13,15 @@ namespace GIP_Biedingssite {
     public partial class WebForm5 {
         
         /// <summary>
+        /// btnMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMenu;
+        
+        /// <summary>
         /// gdvArtikelenLeerkracht control.
         /// </summary>
         /// <remarks>
@@ -47,15 +56,6 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelAddArtikel;
-        
-        /// <summary>
-        /// txtArtikelID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArtikelID;
         
         /// <summary>
         /// txtNaam control.
