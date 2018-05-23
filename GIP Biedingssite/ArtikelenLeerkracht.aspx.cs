@@ -17,7 +17,25 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             PanelAddArtikel.Visible = false;
-         }
+            try
+            {
+                switch (Session["SoortGebr"].ToString())
+                {
+                    case "P":
+                    case "L":
+                    case "B":
+                        break;
+                    default:
+                        Server.Transfer("Home.aspx");
+                        break;
+
+                }
+            }
+            catch
+            {
+                Server.Transfer("Home.aspx");
+            }
+        }
 
         protected void gdvArtikelenLeerkrachten(object sender, EventArgs e)
         {
@@ -42,14 +60,25 @@ namespace GIP_Biedingssite
             string strtoevoegen;
 
             strtoevoegen = "INSERT INTO Artikel(Naam, Startprijs, Beschrijving, Startdatum, Einddatum, FotoNaam ) ";
-            strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum, @foto)";
+            strtoevoegen += "VALUES(@naam, @prijs, @beschrijving, @Sdatum, @Edatum)";
 
+            cmdToevoegen.CommandText = strtoevoegen;
 
             cmdToevoegen.Parameters.AddWithValue("@naam", txtNaam.Text);
             cmdToevoegen.Parameters.AddWithValue("@prijs", Convert.ToInt16(TxtPrijs.Text));
             cmdToevoegen.Parameters.AddWithValue("@beschrijving", txtBeschrijving.Text);
             cmdToevoegen.Parameters.AddWithValue("@Sdatum", Convert.ToDateTime(txtStartDatum.Text));
             cmdToevoegen.Parameters.AddWithValue("@Edatum", Convert.ToDateTime(txtEindDatum.Text));
+
+            OleDbCommand cmdArtikel = new OleDbCommand();
+            cmdArtikel.Connection = cnn;
+
+            cmdArtikel.CommandText = "SELECT TOP 1 ArtikelID FROM Artikel ORDER BY ArtikelID DESC";
+
+            cnn.Open();
+            Session["ArtikelID"] = cmdArtikel.ExecuteScalar();
+            cnn.Close();
+
             
             // Naam van het gekozen bestand en doelpad nieuwe foto
             string strBestandsnaam, strDoelpad, strNummer;
@@ -70,7 +99,7 @@ namespace GIP_Biedingssite
             cmd.Connection = cnn;
 
             string strsql;
-            strsql = "UPDATE tblArtikel SET Foto= @foto ";
+            strsql = "UPDATE Artikel SET Foto= @foto ";
             strsql += " WHERE ArtikelID = @ID";
 
             cmd.CommandText = strsql;
@@ -88,6 +117,12 @@ namespace GIP_Biedingssite
             cnn.Open();
             cmdToevoegen.ExecuteNonQuery();
             cnn.Close();
+        }
+
+        protected void btnMenu_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Menu.aspx");
+
         }
     }
 }

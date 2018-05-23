@@ -13,6 +13,15 @@ namespace GIP_Biedingssite {
     public partial class WebForm4 {
         
         /// <summary>
+        /// btnReturn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReturn;
+        
+        /// <summary>
         /// lblArtikel control.
         /// </summary>
         /// <remarks>
@@ -74,60 +83,6 @@ namespace GIP_Biedingssite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dtsGebruikers;
-        
-        /// <summary>
-        /// pnlBeheerder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlBeheerder;
-        
-        /// <summary>
-        /// ddvArtikel0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView ddvArtikel0;
-        
-        /// <summary>
-        /// dtsArtikel0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtsArtikel0;
-        
-        /// <summary>
-        /// lblbeheerder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblbeheerder;
-        
-        /// <summary>
-        /// gdvbeheerder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdvbeheerder;
-        
-        /// <summary>
-        /// dtsbeheerder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dtsbeheerder;
         
         /// <summary>
         /// pnlBieden control.

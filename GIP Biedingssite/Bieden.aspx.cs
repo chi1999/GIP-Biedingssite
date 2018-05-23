@@ -19,29 +19,12 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             //Controleren als de gebruiker is aangemeld en welk type
-            try
+
+            if (Session["SoortGebr"] == null)
             {
-                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P" || Session["SoortGebr"].ToString() == "B")
-                {
-                    if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
-                    {
-
-                        pnlGebruikers.Visible = true;
-                        pnlBeheerder.Visible = false;
-
-                    }
-
-                    if (Session["SoortGebr"].ToString() == "B")
-                    {
-                        pnlBeheerder.Visible = true;
-                        pnlGebruikers.Visible = false;
-                    }
-                }
+                Server.Transfer("Home.aspx");
             }
-            catch
-            {
-                Server.Transfer("home.aspx");
-            }
+
 
             if (!IsPostBack)
             {
@@ -57,21 +40,11 @@ namespace GIP_Biedingssite
                 dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
                 gdvGebruiker.DataBind();
 
-                dtsbeheerder.FilterExpression = "ArtikelID =" + Session["ArtikelID"];
-                gdvbeheerder.DataBind();
-
+                
             }
             catch
             {
-                if (Session["SoortGebr"].ToString() == "L" || Session["SoortGebr"].ToString() == "P")
-                {
-                    Server.Transfer("ArtikelenLeerlingen.aspx");
-                }
-
-                if (Session["SoortGebr"].ToString() == "B")
-                {
-                    Server.Transfer("ArtikelenLeerkracht.aspx");
-                }
+                Server.Transfer("Menu.aspx");
             }
             
 
@@ -140,7 +113,7 @@ namespace GIP_Biedingssite
             //Plaatsen van het bod als het bedrag hoger is dan het hoogste bod en de startprijs
             if (intbod > Convert.ToInt32(Session["HBod"].ToString()))
             {
-                if (intbod > Convert.ToInt32(Session["Startprijs"].ToString()))
+                if (intbod >= Convert.ToInt32(Session["Startprijs"].ToString()))
                 {
                     OleDbCommand cmd = new OleDbCommand();
                     cmd.Connection = cnn;
@@ -164,9 +137,11 @@ namespace GIP_Biedingssite
 
                     lblMelding.Visible = true;
                     lblMelding.Text = "Uw bod is geplaatst op " + DateTime.Today.Date;
+
                     dtsGebruikers.FilterExpression = "ArtikelID=" + Session["ArtikelID"];
                     gdvGebruiker.DataBind();
-                    
+                   
+
 
                 }
                 else
@@ -184,5 +159,9 @@ namespace GIP_Biedingssite
 
         }
 
+        protected void btnReturn_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("ArtikelenLeerlingen.aspx");
+        }
     }
 }
