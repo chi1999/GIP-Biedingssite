@@ -107,5 +107,11 @@ namespace GIP_Biedingssite
             cmdToevoegen.ExecuteNonQuery();
             cnn.Close();
         }
+
+        protected void btnMenu_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Menu.aspx");
+
+        }
     }
 }

@@ -7,17 +7,13 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <style type="text/css">
-        .auto-style1 {
-            width: 197px;
-            height: 137px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <img class="auto-style1" src="file:///E:/GIP/GIP/GIP-Biedingssite/GIP%20Biedingssite/fotos/veilinghamer.jpg" /></div>
+            <asp:Image ID="Image1" runat="server" Height="157px" ImageUrl="~/fotos/LOGO GIP BIEDING$ITE.png" Width="158px" />
+            <br />
+        </div>
         <p>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

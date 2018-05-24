@@ -19,28 +19,12 @@ namespace GIP_Biedingssite
         protected void Page_Load(object sender, EventArgs e)
         {
             //Controleren als de gebruiker is aangemeld en welk type
-            try
-            {
-                switch (Session["SoortGebr"].ToString())
-                {
-                    case "P":
-                    case "L":
-                    case "B":
-                        pnlBieden.Visible = true;
-                        pnlGebruikers.Visible = false;
-                        break;
-                    default:
-                        Server.Transfer("Home.aspx");
-                        break;
 
-                }
-            }
-            catch
+            if (Session["SoortGebr"] == null)
             {
                 Server.Transfer("Home.aspx");
             }
 
-            //
 
             if (!IsPostBack)
             {
@@ -129,7 +113,7 @@ namespace GIP_Biedingssite
             //Plaatsen van het bod als het bedrag hoger is dan het hoogste bod en de startprijs
             if (intbod > Convert.ToInt32(Session["HBod"].ToString()))
             {
-                if (intbod > Convert.ToInt32(Session["Startprijs"].ToString()))
+                if (intbod >= Convert.ToInt32(Session["Startprijs"].ToString()))
                 {
                     OleDbCommand cmd = new OleDbCommand();
                     cmd.Connection = cnn;
