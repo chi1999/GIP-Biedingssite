@@ -7,11 +7,19 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .newStyle1 {
+            background-image: url('/fotos/2157c84a65827a8.jpg');
+        }
+        .newStyle2 {
+            background-image: url('/fotos/50-Beautiful-and-Minimalist-Presentation-Backgrounds-022.jpg');
+        }
+    </style>
 </head>
-<body>
+<body class="newStyle2">
     <form id="form1" runat="server">
-        <div>
-            <asp:Image ID="Image1" runat="server" Height="157px" ImageUrl="~/fotos/LOGO GIP BIEDING$ITE.png" Width="158px" />
+        <div class="newStyle2">
+            <asp:Image ID="Image1" runat="server" Height="129px" ImageUrl="~/fotos/veilinghamer.jpg" Width="221px" />
             <br />
         </div>
         <p>
