@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\biedingsite.accdb" />
+    <Content Include="fotos\2157c84a65827a8.jpg" />
+    <Content Include="fotos\50-Beautiful-and-Minimalist-Presentation-Backgrounds-022.jpg" />
     <Content Include="fotos\geodriehoek.jpg" />
     <Content Include="ArtikelenLeerkracht.aspx">
       <BrowseToURL>~/ArtikelenLeerkracht.aspx</BrowseToURL>
@@ -76,6 +78,7 @@
     <Content Include="fotos\Pennenzak.jpg" />
     <Content Include="fotos\Rekenmachine.jpg" />
     <Content Include="fotos\Sportkledij.jpg" />
+    <Content Include="fotos\veilinghamer.jpg" />
     <Content Include="packages.config" />
     <Content Include="MasterPage.Master" />
     <Content Include="Home.aspx" />

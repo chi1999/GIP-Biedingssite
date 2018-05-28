@@ -2,8 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Button ID="btnMenu" runat="server" OnClick="btnMenu_Click" Text="Menu" />
-    <asp:GridView ID="gdvArtikelenLeerling" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikelenLeerlingen" BackColor="White" BorderColor="#3366CC" BorderStyle="Solid" BorderWidth="1px" CellPadding="4" Height="10px" Width="381px" OnSelectedIndexChanged="dgvArtikelenLeerling_SelectedIndexChanged">
+   
+        <asp:Button ID="btnMenu" runat="server" OnClick="btnMenu_Click" Text="Menu" Height="40px" Width="90px" />
+        <br />
+        <br />
+    <asp:GridView ID="gdvArtikelenLeerling" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="ArtikelID" DataSourceID="dtsArtikelenLeerlingen" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" Height="10px" Width="381px" OnSelectedIndexChanged="dgvArtikelenLeerling_SelectedIndexChanged" GridLines="Horizontal">
+        <AlternatingRowStyle BackColor="#F7F7F7" />
         <Columns>
             <asp:CommandField ShowSelectButton="True" />
             <asp:BoundField DataField="ArtikelID" HeaderText="ArtikelID" InsertVisible="False" ReadOnly="True" SortExpression="ArtikelID" />
@@ -13,15 +17,19 @@
                 <ControlStyle Width="80px" />
             </asp:ImageField>
         </Columns>
-    <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
-    <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
-    <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
-    <RowStyle BackColor="White" ForeColor="#003399" />
-    <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-    <SortedAscendingCellStyle BackColor="#EDF6F6" />
-    <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
-    <SortedDescendingCellStyle BackColor="#D6DFDF" />
-    <SortedDescendingHeaderStyle BackColor="#002876" />
+    <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+    <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+    <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+    <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+    <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+    <SortedAscendingCellStyle BackColor="#F4F4FD" />
+    <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+    <SortedDescendingCellStyle BackColor="#D8D8F0" />
+    <SortedDescendingHeaderStyle BackColor="#3E3277" />
 </asp:GridView>
     <asp:SqlDataSource ID="dtsArtikelenLeerlingen" runat="server" ConnectionString="<%$ ConnectionStrings:gip %>" ProviderName="<%$ ConnectionStrings:gip.ProviderName %>" SelectCommand="SELECT [ArtikelID], [Naam], [StartPrijs], [FotoNaam] FROM [Artikel]"></asp:SqlDataSource>
+        
+   
+            
+
 </asp:Content>
