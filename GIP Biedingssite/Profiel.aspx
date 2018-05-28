@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Button ID="btnMenu" runat="server" OnClick="Menu_click" Text="Menu" />
+    <br />
     <asp:Label ID="lblGebruiker" runat="server" Text="Persoonlijke gegevens:"></asp:Label>
     <asp:DetailsView ID="dtvGebruiker" runat="server" AutoGenerateRows="False" DataSourceID="dtsGebruiker" Height="50px" Width="125px" DataKeyNames="GebruikerID" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
         <AlternatingRowStyle BackColor="PaleGoldenrod" />

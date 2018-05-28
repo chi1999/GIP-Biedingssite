@@ -57,5 +57,11 @@ namespace GIP_Biedingssite
         {
 
         }
+
+        protected void Menu_click(object sender, EventArgs e)
+        {
+            Server.Transfer("Menu.aspx");
+        }
     }
+
 }
