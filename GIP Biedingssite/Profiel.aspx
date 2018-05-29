@@ -7,8 +7,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form id="form1" runat="server">
+   
     <asp:Label ID="lblGebruiker" runat="server" Text="Persoonlijke gegevens" style="font-weight: 700; text-decoration: underline"></asp:Label>
+    <br />
     <br />
     <asp:DetailsView ID="dtvGebruiker" runat="server" AutoGenerateRows="False" DataSourceID="dtsGebruiker" Height="50px" Width="125px" DataKeyNames="GebruikerID" BackColor="White" BorderColor="#E7E7FF" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" BorderStyle="None">
         <AlternatingRowStyle BackColor="#F7F7F7" />

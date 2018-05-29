@@ -60,6 +60,7 @@
         <br />
         <asp:Label ID="lblbeheerder" runat="server" Text="Geboden gebruikers" style="font-weight: 700; text-decoration: underline"></asp:Label>
         <br />
+        <br />
         <asp:GridView ID="gdvbeheerder" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="dtsbeheerder" BackColor="White" BorderColor="#E7E7FF" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" OnSelectedIndexChanged="gdvbeheerder_SelectedIndexChanged" BorderStyle="None">
             <AlternatingRowStyle BackColor="#F7F7F7" />
             <Columns>
